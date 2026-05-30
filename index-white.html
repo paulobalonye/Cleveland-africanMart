@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleveland African Mart – African Groceries Delivered in Cleveland, Ohio</title>
+  <meta name="description" content="Shop authentic African, Somali, and international groceries in Cleveland, Ohio. West African, Nigerian, Ghanaian, Somali, Mexican & Caribbean products delivered in 30 minutes. Download the CFM app." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:   #1a5c38;
+      --green-m: #2a7a4a;
+      --green-l: #e8f5ee;
+      --green-xl:#f2faf5;
+      --gold:    #d4a017;
+      --gold-l:  #f0c040;
+      --gold-bg: #fdf8ec;
+      --white:   #ffffff;
+      --text:    #111c14;
+      --text-m:  #3a5040;
+      --gray:    #6b8070;
+      --gray-l:  #a0b8a8;
+      --border:  #d8e8dd;
+      --shadow:  rgba(26,92,56,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--white); color: var(--text); }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      background: var(--green);
+      text-align: center;
+      padding: 9px 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.2px;
+    }
+    .top-bar a { color: var(--gold-l); text-decoration: none; font-weight: 700; }
+    .top-bar a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      position: sticky; top: 0; z-index: 200;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 40px; border-radius: 8px; }
+    .nav-brand { color: var(--green); font-size: 0.95rem; font-weight: 800; line-height: 1.2; }
+    .nav-brand span { display: block; color: var(--gray); font-size: 0.65rem; font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-links > a, .dropdown > .nav-link {
+      color: var(--text-m); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px;
+      transition: color 0.15s, background 0.15s; white-space: nowrap;
+    }
+    .nav-links > a:hover, .dropdown > .nav-link:hover { color: var(--green); background: var(--green-l); }
+    .nav-links > a.active { color: var(--green); font-weight: 700; }
+    .dropdown { position: relative; }
+    .dropdown > .nav-link { cursor: default; display: flex; align-items: center; gap: 4px; }
+    .dropdown > .nav-link::after { content: '▾'; font-size: 0.7rem; color: var(--gray-l); }
+    .dropdown-menu {
+      display: none;
+      position: absolute; top: calc(100% + 6px); left: 0;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 8px; min-width: 230px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      color: var(--text-m); text-decoration: none; font-size: 0.85rem; border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .dropdown-menu a:hover { color: var(--green); background: var(--green-l); }
+    .dropdown-menu .divider { height: 1px; background: var(--border); margin: 4px 0; }
+    .nav-cta {
+      background: var(--green); color: var(--white); font-weight: 800;
+      padding: 10px 22px; border-radius: 24px; text-decoration: none; font-size: 0.85rem;
+      margin-left: 10px; transition: background 0.2s, transform 0.15s; white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(26,92,56,0.25);
+    }
+    .nav-cta:hover { background: var(--green-m); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--green); border-radius: 2px; }
+    #nav-toggle { display: none; }
+    .nav-mobile { display: none; }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; height: 60px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      #nav-toggle:checked ~ .nav-mobile {
+        display: flex; flex-direction: column; position: fixed;
+        top: 60px; left: 0; right: 0; background: var(--white);
+        border-bottom: 1px solid var(--border); padding: 16px 20px;
+        gap: 4px; z-index: 199; max-height: calc(100vh - 60px); overflow-y: auto;
+        box-shadow: 0 8px 24px var(--shadow);
+      }
+      .nav-mobile a { color: var(--text-m); text-decoration: none; font-size: 0.92rem; padding: 10px 14px; border-radius: 8px; display: block; }
+      .nav-mobile a:hover { color: var(--green); background: var(--green-l); }
+      .nav-mobile .section-label { font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-l); padding: 12px 14px 4px; font-weight: 700; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .a1 { animation: fadeUp 0.7s ease both; }
+      .a2 { animation: fadeUp 0.7s 0.1s ease both; }
+      .a3 { animation: fadeUp 0.7s 0.2s ease both; }
+      .a4 { animation: fadeUp 0.7s 0.3s ease both; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--green-xl) 0%, var(--white) 50%, var(--gold-bg) 100%);
+      padding: 88px 48px 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -80px; top: -80px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,92,56,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-text { flex: 1; min-width: 280px; max-width: 560px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--green-l); color: var(--green); border: 1px solid rgba(26,92,56,0.15);
+      font-size: 0.74rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 22px;
+    }
+    .hero-badge::before { content: '✓'; font-weight: 900; }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900; line-height: 1.08; color: var(--text);
+      margin-bottom: 18px; letter-spacing: -1.5px;
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-m) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p {
+      color: var(--gray); font-size: 1.05rem; line-height: 1.7;
+      margin-bottom: 36px; max-width: 480px;
+    }
+    .app-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .app-btn {
+      display: flex; align-items: center; gap: 12px;
+      padding: 13px 22px; border-radius: 14px;
+      text-decoration: none; font-weight: 700; font-size: 0.92rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .app-btn .si { font-size: 1.8rem; }
+    .app-btn .sl { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+    .app-btn .sl small { font-weight: 400; font-size: 0.68rem; }
+    .app-btn.ios { background: var(--text); color: var(--white); box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+    .app-btn.ios:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
+    .app-btn.ios small { color: rgba(255,255,255,0.6); }
+    .app-btn.android { background: var(--white); color: var(--text); border: 2px solid var(--border); box-shadow: 0 2px 8px var(--shadow); }
+    .app-btn.android:hover { transform: translateY(-2px); border-color: var(--green); box-shadow: 0 6px 20px var(--shadow); }
+    .app-btn.android small { color: var(--gray); }
+    .hero-visual { flex: 0 0 auto; position: relative; z-index: 1; }
+    .app-card {
+      width: 200px; height: 200px;
+      background: var(--white); border-radius: 28px;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 24px 64px rgba(26,92,56,0.14), 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .app-card img { width: 168px; height: 168px; object-fit: contain; }
+
+    /* ── STATS ── */
+    .stats-bar {
+      background: var(--green);
+      padding: 28px 48px;
+      display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.9rem; font-weight: 900; color: var(--gold-l); line-height: 1; }
+    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+    /* ── SECTION ── */
+    .section { padding: 80px 48px; }
+    .section.tinted { background: var(--green-xl); }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header h2 { font-size: 2rem; font-weight: 900; color: var(--text); margin-bottom: 12px; }
+    .section-header h2 em { font-style: normal; color: var(--green); }
+    .section-header p { color: var(--gray); max-width: 520px; margin: 0 auto; line-height: 1.6; }
+    .underline { width: 48px; height: 3px; background: var(--green); border-radius: 2px; margin: 14px auto 0; }
+    .divider { height: 1px; background: var(--border); }
+
+    /* ── HOW IT WORKS ── */
+    .steps { display: flex; gap: 0; max-width: 800px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .step { flex: 1; min-width: 200px; text-align: center; padding: 0 24px; position: relative; }
+    .step:not(:last-child)::after { content: '→'; position: absolute; right: -8px; top: 26px; color: var(--gray-l); font-size: 1.2rem; }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--green-l); border: 2px solid rgba(26,92,56,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 900; color: var(--green);
+      margin: 0 auto 16px;
+    }
+    .step h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .step p { font-size: 0.83rem; color: var(--gray); line-height: 1.55; }
+
+    /* ── CATEGORY TILES ── */
+    .cat-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px; max-width: 1000px; margin: 0 auto;
+    }
+    .cat-tile {
+      border-radius: 16px; padding: 28px 22px;
+      text-decoration: none; display: block;
+      border: 1.5px solid var(--border); background: var(--white);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .cat-tile:hover { transform: translateY(-5px); box-shadow: 0 16px 40px var(--shadow); border-color: var(--green); }
+    .ct-emoji { font-size: 2.6rem; display: block; margin-bottom: 12px; }
+    .cat-tile h3 { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+    .cat-tile .ct-sub { font-size: 0.75rem; color: var(--gray); line-height: 1.4; margin-bottom: 14px; }
+    .ct-count { display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 700; color: var(--green); }
+    .ct-count::after { content: '→'; }
+
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; max-width: 920px; margin: 0 auto;
+    }
+    .feature-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 28px 22px; text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .feature-card:hover { border-color: var(--green); box-shadow: 0 8px 28px var(--shadow); transform: translateY(-4px); }
+    .feature-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .feature-card h3 { font-size: 0.95rem; color: var(--green); margin-bottom: 8px; font-weight: 700; }
+    .feature-card p { font-size: 0.84rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── TESTIMONIALS ── */
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px; max-width: 980px; margin: 0 auto;
+    }
+    .testi-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 26px 22px;
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+    .testi-stars { color: var(--gold); font-size: 0.95rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testi-card blockquote { color: var(--text-m); font-size: 0.9rem; line-height: 1.7; font-style: italic; margin-bottom: 16px; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--green-l); color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem; flex-shrink: 0;
+    }
+    .testi-name { color: var(--text); font-weight: 700; font-size: 0.86rem; }
+    .testi-loc  { color: var(--gray); font-size: 0.72rem; }
+
+    /* ── DOWNLOAD CTA ── */
+    .cta-section {
+      background: var(--green);
+      text-align: center; padding: 88px 48px;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 32px);
+      pointer-events: none;
+    }
+    .cta-section h2 { font-size: 2.2rem; font-weight: 900; color: var(--white); margin-bottom: 12px; position: relative; }
+    .cta-section p { color: rgba(255,255,255,0.8); margin: 0 auto 36px; font-size: 1rem; max-width: 440px; position: relative; }
+    .cta-section .app-buttons { justify-content: center; position: relative; }
+    .cta-section .app-btn.ios { background: var(--white); color: var(--green); }
+    .cta-section .app-btn.ios small { color: var(--gray); }
+    .cta-section .app-btn.android { background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.3); color: var(--white); }
+    .cta-section .app-btn.android small { color: rgba(255,255,255,0.65); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--text); border-top: none; }
+    .footer-top {
+      padding: 56px 48px; display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-brand .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand img { height: 36px; border-radius: 7px; }
+    .footer-brand strong { color: var(--gold-l); font-size: 0.92rem; }
+    .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.81rem; line-height: 1.6; max-width: 230px; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 8px; }
+    .footer-social a {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center; font-size: 0.95rem; text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .footer-social a:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); }
+    .footer-col h4 { color: rgba(255,255,255,0.4); font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 9px; }
+    .footer-col a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.82rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-l); }
+    .footer-app { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+    .footer-app-btn {
+      display: flex; align-items: center; gap: 9px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 9px; padding: 9px 13px; color: var(--white); text-decoration: none;
+      font-size: 0.8rem; font-weight: 700; transition: background 0.2s;
+    }
+    .footer-app-btn:hover { background: rgba(255,255,255,0.12); }
+    .footer-app-btn .fi { font-size: 1.3rem; }
+    .footer-app-btn small { display: block; font-weight: 400; font-size: 0.63rem; color: rgba(255,255,255,0.5); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding: 16px 48px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-bottom p { color: rgba(255,255,255,0.35); font-size: 0.77rem; }
+    .footer-bottom-links { display: flex; gap: 18px; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.77rem; transition: color 0.15s; }
+    .footer-bottom-links a:hover { color: var(--gold-l); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) {
+      .hero { padding: 60px 20px 52px; flex-direction: column; }
+      .hero-visual { display: none; }
+      .stats-bar { padding: 20px; }
+      .section { padding: 60px 20px; }
+      .cta-section { padding: 64px 20px; }
+      .footer-top { grid-template-columns: 1fr; padding: 40px 20px; }
+      .footer-bottom { padding: 16px 20px; flex-direction: column; align-items: flex-start; }
+      .step::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    🚚 Free delivery on your first order · <a href="shop.html">Browse all categories</a>
+  </div>
+
+  <nav>
+    <a href="index-white.html" class="nav-logo">
+      <img src="CFM-LOGO.png" alt="CFM" />
+      <div class="nav-brand">Cleveland African Mart <span>Authentic African Groceries</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index-white.html" class="active">Home</a>
+      <div class="dropdown">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="category-west-african.html">🌍 West African</a>
+          <a href="category-somali.html">🇸🇴 Somali &amp; East African</a>
+          <a href="category-mexican.html">🌮 Mexican &amp; Latino</a>
+          <a href="category-caribbean.html">🏝️ Caribbean</a>
+          <div class="divider"></div>
+          <a href="category-spices.html">🌶️ Spices &amp; Pantry</a>
+          <a href="category-produce.html">🌿 Fresh Produce</a>
+          <a href="category-beverages.html">🥤 Beverages</a>
+          <a href="category-snacks.html">🍫 Snacks</a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="#download" class="nav-cta">Download App</a>
+    <label class="hamburger" for="nav-toggle"><span></span><span></span><span></span></label>
+  </nav>
+
+  <input type="checkbox" id="nav-toggle" />
+  <div class="nav-mobile">
+    <a href="index-white.html">🏠 Home</a>
+    <div class="section-label">Shop by Category</div>
+    <a href="category-west-african.html">🌍 West African</a>
+    <a href="category-somali.html">🇸🇴 Somali &amp; East African</a>
+    <a href="category-mexican.html">🌮 Mexican &amp; Latino</a>
+    <a href="category-caribbean.html">🏝️ Caribbean</a>
+    <a href="category-spices.html">🌶️ Spices &amp; Pantry</a>
+    <a href="category-produce.html">🌿 Fresh Produce</a>
+    <div class="section-label">Pages</div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="#download">📱 Download App</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <div class="a1">
+        <span class="hero-badge">Now Available · Cleveland, Ohio · iOS &amp; Android</span>
+      </div>
+      <h1 class="a2">
+        Your <span class="highlight">African Market</span><br>in Your Pocket
+      </h1>
+      <p class="a3">
+        Shop authentic African, Somali, and international groceries — 500+ products from fufu to ugali,
+        suya spice to injera — delivered fresh to your door across Cleveland in under 30 minutes.
+      </p>
+      <div class="app-buttons a4" id="download">
+        <a href="#" class="app-btn ios">
+          <span class="si">🍎</span>
+          <span class="sl"><small>Download on the</small>App Store</span>
+        </a>
+        <a href="#" class="app-btn android">
+          <span class="si">▶</span>
+          <span class="sl"><small>Get it on</small>Google Play</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="app-card">
+        <img src="CFM-LOGO.png" alt="CFM App" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">2,400+</div><div class="stat-label">Happy Customers</div></div>
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Products</div></div>
+    <div class="stat"><div class="stat-num">30 min</div><div class="stat-label">Avg Delivery</div></div>
+    <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">App Rating</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Cuisine Types</div></div>
+  </div>
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="section-header">
+      <h2>How It <em>Works</em></h2>
+      <p>Get authentic African groceries on your table in three simple steps.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Download the App</h3>
+        <p>Free on iOS and Android. Set up your Cleveland delivery address in seconds.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Browse &amp; Shop</h3>
+        <p>Explore 500+ products across West African, Somali, Mexican and more categories.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Delivered Fresh</h3>
+        <p>Your order is picked, packed, and at your door in under 30 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Categories -->
+  <section class="section tinted">
+    <div class="section-header">
+      <h2>Shop by <em>Cuisine</em></h2>
+      <p>We carry products from across Africa and beyond — something for every kitchen in Cleveland.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="cat-grid">
+      <a href="category-west-african.html" class="cat-tile">
+        <span class="ct-emoji">🌍</span>
+        <h3>West African</h3>
+        <p class="ct-sub">Nigerian · Ghanaian · Ivorian · Cameroonian</p>
+        <span class="ct-count">120+ products</span>
+      </a>
+      <a href="category-somali.html" class="cat-tile">
+        <span class="ct-emoji">🇸🇴</span>
+        <h3>Somali &amp; East African</h3>
+        <p class="ct-sub">Somali · Ethiopian · Eritrean</p>
+        <span class="ct-count">60+ products</span>
+      </a>
+      <a href="category-mexican.html" class="cat-tile">
+        <span class="ct-emoji">🌮</span>
+        <h3>Mexican &amp; Latino</h3>
+        <p class="ct-sub">Mexican · Puerto Rican · Caribbean Latino</p>
+        <span class="ct-count">80+ products</span>
+      </a>
+      <a href="category-caribbean.html" class="cat-tile">
+        <span class="ct-emoji">🏝️</span>
+        <h3>Caribbean</h3>
+        <p class="ct-sub">Jamaican · Trinidadian · Haitian</p>
+        <span class="ct-count">50+ products</span>
+      </a>
+      <a href="category-central-african.html" class="cat-tile">
+        <span class="ct-emoji">🫙</span>
+        <h3>Central &amp; Southern African</h3>
+        <p class="ct-sub">Zambian · Zimbabwean · Kenyan</p>
+        <span class="ct-count">40+ products</span>
+      </a>
+      <a href="category-spices.html" class="cat-tile">
+        <span class="ct-emoji">🌶️</span>
+        <h3>Spices &amp; Pantry</h3>
+        <p class="ct-sub">Blends · Oils · Grains · Dried goods</p>
+        <span class="ct-count">200+ products</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Why <em>Cleveland African Mart?</em></h2>
+      <p>Built by the African community, for the community — and for everyone who loves these flavours.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🌍</div><h3>100% Authentic</h3><p>Sourced directly from verified African and international suppliers. No substitutes, no compromises.</p></div>
+      <div class="feature-card"><div class="feature-icon">⚡</div><h3>30-Min Delivery</h3><p>Express same-day delivery across greater Cleveland. Order now, cook tonight.</p></div>
+      <div class="feature-card"><div class="feature-icon">💰</div><h3>Best Prices</h3><p>Direct sourcing means better prices. First delivery always free — no hidden fees.</p></div>
+      <div class="feature-card"><div class="feature-icon">🤝</div><h3>Community-First</h3><p>A portion of every CFM order supports local African cultural programs in Cleveland.</p></div>
+      <div class="feature-card"><div class="feature-icon">📱</div><h3>Effortless App</h3><p>Order in 2 minutes, track delivery in real time, reorder favourites in one tap.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Secure Checkout</h3><p>Card, Apple Pay, Google Pay — your payment is always encrypted and protected.</p></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section tinted">
+    <div class="section-header">
+      <h2>What Cleveland <em>Families</em> Say</h2>
+      <p>Real reviews from African, Somali, and Latino families across Cleveland.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Finally I can get proper ofe akwu ingredients without driving hours away. The egusi, stockfish, and uziza leaves arrived so fresh. CFM is a blessing for our family."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">C</div>
+          <div><div class="testi-name">Chioma E.</div><div class="testi-loc">Shaker Heights, OH</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"As a Somali family in Cleveland, we struggled to find halal suugo sauce and suqaar spices. CFM carries everything. Fast delivery and great quality. Download this app!"</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">H</div>
+          <div><div class="testi-name">Hodan M.</div><div class="testi-loc">Cleveland, OH</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Me encanta esta app. Encontré masa harina, chiles secos y achiote — todo en un solo pedido. Entrega rapidísima. ¡Muy recomendado para la comunidad latina!"</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div><div class="testi-name">María R.</div><div class="testi-loc">Parma, OH</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA -->
+  <section class="cta-section">
+    <h2>Start Shopping Authentic Today</h2>
+    <p>Download the app and get your first delivery free. No promo code needed.</p>
+    <div class="app-buttons">
+      <a href="#" class="app-btn ios">
+        <span class="si">🍎</span>
+        <span class="sl"><small>Download on the</small>App Store</span>
+      </a>
+      <a href="#" class="app-btn android">
+        <span class="si">▶</span>
+        <span class="sl"><small>Get it on</small>Google Play</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-row"><img src="CFM-LOGO.png" alt="CFM" /><strong>Cleveland African Mart</strong></div>
+        <p>Bringing authentic African, Somali, and international groceries to Cleveland families since 2022.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/clevelandafricanmart" target="_blank">📘</a>
+          <a href="#">📸</a><a href="#">🎵</a><a href="#">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="category-west-african.html">West African</a></li>
+          <li><a href="category-somali.html">Somali &amp; East African</a></li>
+          <li><a href="category-mexican.html">Mexican &amp; Latino</a></li>
+          <li><a href="category-caribbean.html">Caribbean</a></li>
+          <li><a href="category-spices.html">Spices &amp; Pantry</a></li>
+          <li><a href="category-produce.html">Fresh Produce</a></li>
+          <li><a href="category-beverages.html">Beverages</a></li>
+          <li><a href="category-snacks.html">Snacks</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog &amp; Recipes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Centre / FAQ</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Returns &amp; Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <br /><h4>Get the App</h4>
+        <div class="footer-app">
+          <a href="#" class="footer-app-btn"><span class="fi">🍎</span><span><small>Download on the</small>App Store</span></a>
+          <a href="#" class="footer-app-btn"><span class="fi">▶</span><span><small>Get it on</small>Google Play</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cleveland African Mart LLC · Cleveland, Ohio · All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

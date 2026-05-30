@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleveland African Mart – Download the App</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --terra:   #c65d35;
+      --terra-d: #9e4425;
+      --terra-l: #f0d5c5;
+      --ochre:   #c8860a;
+      --ochre-l: #f9edce;
+      --sand:    #faf2e4;
+      --brown:   #4a2c17;
+      --brown-l: #7a4a2a;
+      --text:    #2e1a0e;
+      --gray:    #7a5f4a;
+      --white:   #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: Georgia, 'Times New Roman', serif; background: var(--sand); color: var(--text); }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .anim-1 { animation: fadeUp 0.75s ease both; }
+      .anim-2 { animation: fadeUp 0.75s 0.14s ease both; }
+      .anim-3 { animation: fadeUp 0.75s 0.28s ease both; }
+      .anim-4 { animation: fadeUp 0.75s 0.42s ease both; }
+    }
+
+    /* ── Mud cloth border strip ── */
+    .mud-strip {
+      height: 14px;
+      background: var(--brown);
+      position: relative;
+      overflow: hidden;
+    }
+    .mud-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(90deg,
+          transparent 0, transparent 10px,
+          var(--ochre) 10px, var(--ochre) 12px,
+          transparent 12px, transparent 22px,
+          var(--terra-l) 22px, var(--terra-l) 24px
+        );
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--brown);
+      padding: 16px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; }
+    .nav-logo img { height: 42px; border-radius: 8px; }
+    .nav-brand { color: var(--terra-l); font-size: 1rem; font-weight: 700; line-height: 1.2; font-family: Georgia, serif; }
+    .nav-brand span { display: block; color: rgba(240,213,197,0.6); font-size: 0.7rem; font-family: 'Segoe UI', sans-serif; font-weight: 400; }
+    .nav-cta {
+      background: var(--terra);
+      color: var(--white);
+      font-weight: 700;
+      padding: 11px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--terra-d); transform: translateY(-1px); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, var(--sand) 0%, #fde8d4 60%, #faf2e4 100%);
+      padding: 80px 48px 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Bogolan/mud cloth pattern overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg,
+          rgba(74,44,23,0.04) 0px, rgba(74,44,23,0.04) 1px,
+          transparent 1px, transparent 40px
+        ),
+        repeating-linear-gradient(90deg,
+          rgba(74,44,23,0.04) 0px, rgba(74,44,23,0.04) 1px,
+          transparent 1px, transparent 40px
+        );
+      pointer-events: none;
+    }
+    /* Circular decorative element */
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -60px; bottom: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 40px solid rgba(198,93,53,0.08);
+      pointer-events: none;
+    }
+    .hero-text { flex: 1; min-width: 280px; max-width: 540px; position: relative; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--ochre-l);
+      color: var(--ochre);
+      font-size: 0.73rem; font-weight: 700;
+      font-family: 'Segoe UI', sans-serif;
+      letter-spacing: 0.5px;
+      padding: 5px 14px;
+      border-radius: 6px;
+      margin-bottom: 22px;
+      border-left: 3px solid var(--ochre);
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--brown);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em { font-style: italic; color: var(--terra); }
+    .hero p {
+      color: var(--gray);
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 460px;
+    }
+    .app-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .app-btn {
+      display: flex; align-items: center; gap: 12px;
+      padding: 13px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      font-family: 'Segoe UI', sans-serif;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .app-btn .store-icon { font-size: 1.7rem; }
+    .app-btn .store-label { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+    .app-btn .store-label small { font-weight: 400; font-size: 0.68rem; }
+    .app-btn.primary {
+      background: var(--terra);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(198,93,53,0.3);
+    }
+    .app-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(198,93,53,0.35); }
+    .app-btn.primary small { color: rgba(255,255,255,0.7); }
+    .app-btn.secondary {
+      background: var(--white);
+      color: var(--brown);
+      border: 2px solid var(--terra-l);
+      box-shadow: 0 2px 8px rgba(74,44,23,0.06);
+    }
+    .app-btn.secondary:hover { transform: translateY(-2px); border-color: var(--terra); }
+    .app-btn.secondary small { color: var(--gray); }
+
+    .hero-visual { flex: 0 0 auto; }
+    .logo-frame {
+      width: 180px; height: 180px;
+      background: var(--white);
+      border-radius: 20px;
+      border: 3px solid var(--terra-l);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 6px 6px 0 var(--terra-l), 0 12px 36px rgba(74,44,23,0.12);
+    }
+    .logo-frame img { width: 150px; height: 150px; object-fit: contain; }
+
+    /* ── Stats ── */
+    .stats-bar {
+      background: var(--brown);
+      padding: 24px 48px;
+      display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.9rem; font-weight: 700; color: var(--terra-l); font-family: Georgia, serif; line-height: 1; }
+    .stat-label { font-size: 0.7rem; color: rgba(240,213,197,0.65); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-family: 'Segoe UI', sans-serif; }
+
+
+    /* ── Section ── */
+    .section { padding: 76px 48px; }
+    .section.warm { background: var(--terra-l); }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header h2 { font-size: 1.9rem; font-weight: 700; color: var(--brown); margin-bottom: 12px; }
+    .section-header h2 em { font-style: italic; color: var(--terra); }
+    .section-header p { color: var(--gray); font-family: 'Segoe UI', sans-serif; max-width: 500px; margin: 0 auto; line-height: 1.6; font-size: 0.95rem; }
+    .underline { width: 48px; height: 3px; background: var(--terra); border-radius: 2px; margin: 14px auto 0; }
+
+    /* ── Categories ── */
+    .cat-scroll {
+      display: flex; gap: 12px; overflow-x: auto;
+      padding-bottom: 6px; max-width: 900px; margin: 0 auto;
+      scrollbar-width: thin; scrollbar-color: var(--terra) transparent;
+    }
+    .cat-scroll::-webkit-scrollbar { height: 4px; }
+    .cat-scroll::-webkit-scrollbar-thumb { background: var(--terra); border-radius: 2px; }
+    .cat-card {
+      flex: 0 0 auto;
+      background: var(--white);
+      border: 2px solid var(--terra-l);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center; min-width: 128px;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .cat-card:hover { border-color: var(--terra); box-shadow: 4px 4px 0 var(--terra-l); transform: translateY(-2px); }
+    .cat-icon { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+    .cat-name { font-size: 0.75rem; color: var(--gray); font-weight: 600; font-family: 'Segoe UI', sans-serif; }
+
+    /* ── Features ── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px; max-width: 900px; margin: 0 auto;
+    }
+    .feature-card {
+      background: var(--white);
+      border-radius: 14px; padding: 28px 22px; text-align: center;
+      border-bottom: 4px solid var(--terra);
+      box-shadow: 0 4px 16px rgba(74,44,23,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(74,44,23,0.1); }
+    .feature-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 0.95rem; color: var(--brown); margin-bottom: 8px; font-weight: 700; font-family: Georgia, serif; }
+    .feature-card p { font-size: 0.84rem; color: var(--gray); line-height: 1.6; font-family: 'Segoe UI', sans-serif; }
+
+    /* ── Testimonials ── */
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px; max-width: 960px; margin: 0 auto;
+    }
+    .testi-card {
+      background: var(--white);
+      border-radius: 14px; padding: 26px 22px;
+      box-shadow: 4px 4px 0 var(--terra-l);
+      border: 1px solid var(--terra-l);
+    }
+    .testi-stars { color: var(--ochre); font-size: 0.95rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testi-card blockquote {
+      color: var(--text); font-family: Georgia, serif;
+      font-size: 0.9rem; line-height: 1.7; font-style: italic; margin-bottom: 16px;
+    }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--terra-l); color: var(--terra-d);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; flex-shrink: 0;
+      font-family: Georgia, serif;
+    }
+    .testi-name { color: var(--brown); font-weight: 700; font-size: 0.85rem; font-family: Georgia, serif; }
+    .testi-loc { color: var(--gray); font-size: 0.72rem; font-family: 'Segoe UI', sans-serif; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--brown);
+      text-align: center;
+      padding: 80px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg,
+          rgba(240,213,197,0.04) 0px, rgba(240,213,197,0.04) 1px,
+          transparent 1px, transparent 30px
+        );
+      pointer-events: none;
+    }
+    .cta-section h2 { font-size: 2.1rem; font-weight: 700; color: var(--terra-l); margin-bottom: 12px; font-family: Georgia, serif; position: relative; }
+    .cta-section h2 em { font-style: italic; color: var(--terra); }
+    .cta-section p { color: rgba(240,213,197,0.75); margin-bottom: 36px; font-size: 1rem; font-family: 'Segoe UI', sans-serif; position: relative; }
+    .cta-section .app-buttons { justify-content: center; position: relative; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--text);
+      text-align: center; padding: 22px 48px;
+      color: rgba(240,213,197,0.5); font-size: 0.8rem;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    footer a { color: var(--terra-l); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      nav { padding: 12px 20px; }
+      .hero { padding: 56px 20px 48px; flex-direction: column; }
+      .hero-visual { display: none; }
+      .stats-bar, .section, .cta-section { padding: 56px 20px; }
+      footer { padding: 18px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mud-strip"></div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-logo">
+      <img src="CFM-LOGO.png" alt="CFM Logo" />
+      <div class="nav-brand">Cleveland African Mart <span>Authentic African Groceries</span></div>
+    </div>
+    <a href="#download" class="nav-cta">Download App</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="download">
+    <div class="hero-text">
+      <div class="anim-1">
+        <span class="hero-badge">🌍 Now Available in Cleveland, Ohio</span>
+      </div>
+      <h1 class="anim-2">
+        The Taste of Home,<br>
+        <em>Delivered to Your Door</em>
+      </h1>
+      <p class="anim-3">
+        Cleveland African Mart brings you over 500 authentic indigenous African groceries —
+        from palm oil and plantains to egusi and dried fish — delivered fresh, delivered fast.
+      </p>
+      <div class="app-buttons anim-4">
+        <a href="#" class="app-btn primary">
+          <span class="store-icon">🍎</span>
+          <span class="store-label"><small>Download on the</small>App Store</span>
+        </a>
+        <a href="#" class="app-btn secondary">
+          <span class="store-icon">▶</span>
+          <span class="store-label"><small>Get it on</small>Google Play</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="logo-frame">
+        <img src="CFM-LOGO.png" alt="CFM" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">2,400+</div><div class="stat-label">Happy Customers</div></div>
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">African Products</div></div>
+    <div class="stat"><div class="stat-num">30 min</div><div class="stat-label">Avg Delivery</div></div>
+    <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">App Rating</div></div>
+  </div>
+
+  <!-- Categories -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Browse <em>Every Category</em></h2>
+      <p>From the coast of West Africa to your Cleveland kitchen — everything you need.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="cat-scroll">
+      <div class="cat-card"><span class="cat-icon">🍚</span><span class="cat-name">Fufu &amp; Swallows</span></div>
+      <div class="cat-card"><span class="cat-icon">🌶️</span><span class="cat-name">Spices &amp; Seasonings</span></div>
+      <div class="cat-card"><span class="cat-icon">🌿</span><span class="cat-name">Fresh Produce</span></div>
+      <div class="cat-card"><span class="cat-icon">🥬</span><span class="cat-name">Vegetables &amp; Leaves</span></div>
+      <div class="cat-card"><span class="cat-icon">🐟</span><span class="cat-name">Dried Fish &amp; Seafood</span></div>
+      <div class="cat-card"><span class="cat-icon">🥤</span><span class="cat-name">Drinks &amp; Beverages</span></div>
+      <div class="cat-card"><span class="cat-icon">🍫</span><span class="cat-name">Snacks &amp; Confections</span></div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section warm">
+    <div class="section-header">
+      <h2>Why <em>Choose</em> CFM?</h2>
+      <p>Born in the African community, built for the African community.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>Genuinely Authentic</h3>
+        <p>Every item sourced from trusted African suppliers. The flavors your family grew up with.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚚</div>
+        <h3>Same-Day Delivery</h3>
+        <p>Order by phone or app. Delivered fresh across Cleveland in 30 minutes or less.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Community-Built</h3>
+        <p>Founded by Africans, for Africans in Cleveland. Shopping here supports our community.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💳</div>
+        <h3>Easy Checkout</h3>
+        <p>Pay with any card, Apple Pay, or Google Pay. Safe, fast, and always protected.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Our <em>Community</em> Speaks</h2>
+      <p>African families across Cleveland trust CFM to bring the taste of home.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"This is exactly what Cleveland needed. I get ofe akwu ingredients, uziza, crayfish — everything in one order. The delivery is always on time and the quality is amazing."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">I</div>
+          <div><div class="testi-name">Ijeoma O.</div><div class="testi-loc">Cleveland, OH</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"My wife was so happy when I showed her this app. We got fresh garden eggs, tatashe, and Cameroon pepper — things we haven't had since we arrived. Thank you CFM!"</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">T</div>
+          <div><div class="testi-name">Taiwo B.</div><div class="testi-loc">Garfield Heights, OH</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"I cook jollof rice every weekend for my family. CFM makes it possible — I get long grain rice, Cameroon pepper, and tomato puree delivered every Saturday morning. Life is good!"</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div><div class="testi-name">Mamadou D.</div><div class="testi-loc">East Cleveland, OH</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Taste of Home, <em>Right Here</em> in Cleveland</h2>
+    <p>Download the Cleveland African Mart app today. First delivery is always free.</p>
+    <div class="app-buttons">
+      <a href="#" class="app-btn primary">
+        <span class="store-icon">🍎</span>
+        <span class="store-label"><small>Download on the</small>App Store</span>
+      </a>
+      <a href="#" class="app-btn secondary">
+        <span class="store-icon">▶</span>
+        <span class="store-label"><small>Get it on</small>Google Play</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="mud-strip"></div>
+
+  <footer>
+    <p>© 2026 Cleveland African Mart · Cleveland, Ohio ·
+      <a href="https://www.facebook.com/clevelandafricanmart" target="_blank">Facebook</a>
+    </p>
+  </footer>
+
+</body>
+</html>

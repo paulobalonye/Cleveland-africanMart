@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mexican & Latino Groceries – Cleveland African Mart</title>
+  <meta name="description" content="Shop authentic Mexican and Latino groceries in Cleveland Ohio. Masa harina, dried chiles, achiote, sofrito, tomatillos delivered in 30 minutes." />
+  <link rel="canonical" href="https://clevelandafricanmart.com/category-mexican.html" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--dark:#0a1a0f;--dark2:#122018;--dark3:#0d2115;--gold:#d4a017;--gold-l:#f0c040;--white:#ffffff;--gray:#9aab9e;--gray-l:#c5d4c9;--accent:#e8a020;--accent-dim:rgba(232,160,32,0.12);}
+    html{scroll-behavior:smooth;}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--white);}
+    .top-bar{background:var(--gold);text-align:center;padding:8px 20px;font-size:.78rem;font-weight:700;color:var(--dark);}.top-bar a{color:var(--dark);text-decoration:underline;}
+    nav{background:rgba(10,26,15,.98);backdrop-filter:blur(12px);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(212,160,23,.15);}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}.nav-logo img{height:40px;border-radius:8px;}.nav-brand{color:var(--gold);font-size:.95rem;font-weight:800;line-height:1.2;}.nav-brand span{display:block;color:var(--gray);font-size:.65rem;font-weight:400;}
+    .nav-links{display:flex;align-items:center;gap:4px;}.nav-links a{color:var(--gray-l);text-decoration:none;font-size:.88rem;font-weight:500;padding:8px 14px;border-radius:8px;transition:color .15s,background .15s;white-space:nowrap;}.nav-links a:hover{color:var(--gold);background:rgba(212,160,23,.07);}
+    .nav-cta{background:var(--gold);color:var(--dark);font-weight:800;padding:10px 22px;border-radius:24px;text-decoration:none;font-size:.85rem;margin-left:8px;transition:background .2s,transform .15s;white-space:nowrap;}.nav-cta:hover{background:var(--gold-l);transform:translateY(-1px);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:2px;}
+    #nav-toggle{display:none;}.nav-mobile{display:none;}
+    @media(max-width:768px){nav{padding:0 20px;height:60px;}.nav-links{display:none;}.hamburger{display:flex;}#nav-toggle:checked~.nav-mobile{display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:var(--dark2);border-bottom:1px solid rgba(212,160,23,.15);padding:16px 20px;gap:4px;z-index:199;max-height:calc(100vh - 60px);overflow-y:auto;}.nav-mobile a{color:var(--gray-l);text-decoration:none;font-size:.92rem;padding:10px 14px;border-radius:8px;display:block;}.nav-mobile .section-label{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);padding:12px 14px 4px;font-weight:700;}}
+    .cat-hero{padding:64px 48px 52px;position:relative;overflow:hidden;background:linear-gradient(145deg,#2d1a00 0%,#160d00 100%);border-bottom:1px solid rgba(232,160,32,.2);}
+    .cat-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(232,160,32,.03) 0px,rgba(232,160,32,.03) 1px,transparent 1px,transparent 32px),repeating-linear-gradient(-45deg,rgba(232,160,32,.03) 0px,rgba(232,160,32,.03) 1px,transparent 1px,transparent 32px);pointer-events:none;}
+    .cat-hero-inner{position:relative;max-width:1100px;margin:0 auto;}.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:18px;font-size:.78rem;color:var(--gray);}.breadcrumb a{color:var(--gray);text-decoration:none;transition:color .15s;}.breadcrumb a:hover{color:var(--gold);}.breadcrumb span{color:rgba(255,255,255,.2);}
+    .cat-tag{display:inline-block;background:var(--accent-dim);color:var(--accent);font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:12px;margin-bottom:14px;}
+    .cat-hero h1{font-size:clamp(2rem,4.5vw,3rem);font-weight:900;line-height:1.1;margin-bottom:12px;letter-spacing:-.5px;}.cat-hero h1 em{font-style:normal;color:var(--accent);}
+    .cat-hero p{color:var(--gray);font-size:.98rem;line-height:1.65;max-width:500px;margin-bottom:24px;}
+    .cat-meta{display:flex;gap:24px;flex-wrap:wrap;}.cat-meta-item{display:flex;align-items:center;gap:8px;}.cat-meta-item .icon{font-size:1.1rem;}.cat-meta-item span{font-size:.82rem;color:var(--gray-l);}.cat-meta-item strong{color:var(--white);}
+    .cat-hero-emoji{font-size:7rem;opacity:.1;position:absolute;right:48px;top:50%;transform:translateY(-50%);pointer-events:none;user-select:none;}
+    .dl-alert{background:linear-gradient(90deg,rgba(212,160,23,.12) 0%,rgba(212,160,23,.06) 100%);border:1px solid rgba(212,160,23,.25);border-left:4px solid var(--gold);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}.dl-alert p{font-size:.88rem;color:var(--gray-l);}.dl-alert strong{color:var(--white);}
+    .dl-btns{display:flex;gap:10px;flex-shrink:0;}.dl-btn{display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:10px;text-decoration:none;font-size:.82rem;font-weight:700;transition:transform .15s,opacity .15s;}.dl-btn:hover{transform:translateY(-1px);opacity:.9;}.dl-btn.ios{background:var(--gold);color:var(--dark);}.dl-btn.android{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--white);}
+    .products-area{padding:52px 48px;max-width:1200px;margin:0 auto;}
+    .section-label{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:6px;}.section-title{font-size:1.4rem;font-weight:800;margin-bottom:28px;}.section-title em{font-style:normal;color:var(--gold);}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:48px;}
+    .product-card{display:block;text-decoration:none;background:var(--dark2);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s;}.product-card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 16px 40px rgba(0,0,0,.35);}
+    .product-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:rgba(255,255,255,.025);position:relative;}
+    .product-badge{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:10px;}.badge-hot{background:rgba(255,80,0,.2);color:#ff9966;}.badge-new{background:rgba(42,180,90,.2);color:#6eda97;}
+    .product-body{padding:14px 14px 16px;}.product-origin{font-size:.64rem;color:var(--gray);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;font-weight:600;}.product-body h4{font-size:.88rem;font-weight:700;color:var(--white);line-height:1.35;margin-bottom:4px;}.product-desc{font-size:.75rem;color:var(--gray);line-height:1.4;margin-bottom:12px;}
+    .product-footer{display:flex;align-items:center;justify-content:space-between;gap:6px;}.product-price{font-size:1rem;font-weight:900;color:var(--gold);}
+    .order-btn{display:flex;align-items:center;gap:5px;background:var(--accent-dim);border:1px solid rgba(232,160,32,.3);color:var(--accent);border-radius:8px;padding:6px 12px;font-size:.76rem;font-weight:700;white-space:nowrap;transition:background .15s,color .15s,border-color .15s;}.product-card:hover .order-btn{background:var(--accent);color:var(--dark);border-color:var(--accent);}
+    .cta-section{background:linear-gradient(145deg,#2d1a00 0%,#160d00 100%);border-top:1px solid rgba(232,160,32,.15);border-bottom:1px solid rgba(232,160,32,.15);padding:72px 48px;text-align:center;}.cta-section h2{font-size:2rem;font-weight:900;margin-bottom:10px;}.cta-section h2 em{font-style:normal;color:var(--gold);}.cta-section p{color:var(--gray);max-width:440px;margin:0 auto 32px;line-height:1.6;}
+    .app-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}.app-btn{display:flex;align-items:center;gap:12px;padding:14px 24px;border-radius:14px;text-decoration:none;font-weight:700;font-size:.95rem;transition:transform .15s,opacity .15s;}.app-btn:hover{transform:translateY(-2px);opacity:.9;}.app-btn .si{font-size:1.8rem;}.app-btn .sl{display:flex;flex-direction:column;line-height:1.2;text-align:left;}.app-btn .sl small{font-weight:400;font-size:.68rem;}.app-btn.ios{background:var(--gold);color:var(--dark);}.app-btn.ios small{color:rgba(10,26,15,.65);}.app-btn.android{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:var(--white);}.app-btn.android small{color:var(--gray);}
+    footer{background:#06110a;border-top:1px solid rgba(212,160,23,.12);padding:24px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}footer p{color:var(--gray);font-size:.78rem;}.footer-links{display:flex;gap:20px;}.footer-links a{color:var(--gray);text-decoration:none;font-size:.78rem;transition:color .15s;}.footer-links a:hover{color:var(--gold);}
+    @media(max-width:640px){.cat-hero{padding:48px 20px 40px;}.cat-hero-emoji{display:none;}.dl-alert{padding:14px 20px;}.products-area{padding:40px 20px;}.product-grid{grid-template-columns:repeat(2,1fr);}.cta-section{padding:56px 20px;}footer{padding:18px 20px;flex-direction:column;align-items:flex-start;}}
+  </style>
+</head>
+<body>
+  <div class="top-bar">🚚 Free delivery on your first order · <a href="shop.html">← Back to all categories</a></div>
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="CFM-LOGO.png" alt="CFM" /><div class="nav-brand">Cleveland African Mart <span>Authentic African Groceries</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+    <a href="index.html#download" class="nav-cta">Download App</a>
+    <label class="hamburger" for="nav-toggle"><span></span><span></span><span></span></label>
+  </nav>
+  <input type="checkbox" id="nav-toggle" />
+  <div class="nav-mobile"><a href="index.html">🏠 Home</a><a href="shop.html">🛒 All Categories</a><div class="section-label">Other Categories</div><a href="category-west-african.html">🌍 West African</a><a href="category-somali.html">🇸🇴 Somali &amp; East African</a><a href="category-caribbean.html">🏝️ Caribbean</a><a href="category-spices.html">🌶️ Spices &amp; Pantry</a><div class="section-label">Pages</div><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="index.html#download">📱 Download App</a></div>
+
+  <div class="cat-hero">
+    <div class="cat-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="shop.html">Shop</a><span>/</span><span style="color:var(--white)">Mexican &amp; Latino</span></div>
+      <span class="cat-tag">🌮 Mexican &amp; Latino</span>
+      <h1>Mexican, Puerto Rican<br>&amp; <em>Caribbean Latino</em></h1>
+      <p>Masa harina, dried chiles, achiote paste, sofrito, tomatillos, mole, recao — all the authentic Latin pantry ingredients Cleveland's Latino community needs, delivered fresh in 30 minutes.</p>
+      <div class="cat-meta">
+        <div class="cat-meta-item"><span class="icon">📦</span><span><strong>80+</strong> products</span></div>
+        <div class="cat-meta-item"><span class="icon">⚡</span><span>Delivered in <strong>30 min</strong></span></div>
+        <div class="cat-meta-item"><span class="icon">🌎</span><span>Mexico · Puerto Rico · Dominican Republic</span></div>
+      </div>
+    </div>
+    <div class="cat-hero-emoji">🌮</div>
+  </div>
+
+  <div class="dl-alert"><p>📱 <strong>Order via the CFM app</strong> — tap any product then download to place your order. First delivery free.</p><div class="dl-btns"><a href="index.html#download" class="dl-btn ios">🍎 App Store</a><a href="index.html#download" class="dl-btn android">▶ Google Play</a></div></div>
+
+  <div class="products-area">
+    <div class="section-label">Mexican Pantry</div>
+    <div class="section-title">Mexican <em>Kitchen Essentials</em></div>
+    <div class="product-grid">
+      <a href="index.html#download" class="product-card"><div class="product-img">🌽<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">Mexico</div><h4>Masa Harina (2kg)</h4><div class="product-desc">Finely ground nixtamal corn flour</div><div class="product-footer"><span class="product-price">$6.99</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🌶️</div><div class="product-body"><div class="product-origin">Mexico</div><h4>Dried Ancho Chiles</h4><div class="product-desc">Mild, smoky dried poblano peppers</div><div class="product-footer"><span class="product-price">$5.50</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🫙</div><div class="product-body"><div class="product-origin">Mexico / Yucatán</div><h4>Achiote Paste (Annatto)</h4><div class="product-desc">Traditional Yucatecan marinade paste</div><div class="product-footer"><span class="product-price">$4.99</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🍅</div><div class="product-body"><div class="product-origin">Mexico</div><h4>Tomatillos (Canned)</h4><div class="product-desc">Green husked tomatoes for salsa verde</div><div class="product-footer"><span class="product-price">$3.99</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🌶️<span class="product-badge badge-hot">Hot</span></div><div class="product-body"><div class="product-origin">Mexico</div><h4>Chipotle Peppers in Adobo</h4><div class="product-desc">Smoked jalapeños in rich adobo sauce</div><div class="product-footer"><span class="product-price">$3.99</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🫙<span class="product-badge badge-new">New</span></div><div class="product-body"><div class="product-origin">Oaxaca, Mexico</div><h4>Mole Negro Paste</h4><div class="product-desc">Complex Oaxacan black mole sauce</div><div class="product-footer"><span class="product-price">$9.99</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🌶️</div><div class="product-body"><div class="product-origin">Mexico</div><h4>Dried Guajillo Chiles</h4><div class="product-desc">Tangy, mildly hot dried pepper</div><div class="product-footer"><span class="product-price">$4.50</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🧄</div><div class="product-body"><div class="product-origin">Mexico</div><h4>Epazote (Dried)</h4><div class="product-desc">Traditional Mexican herb for beans</div><div class="product-footer"><span class="product-price">$3.50</span><span class="order-btn">Order in App →</span></div></div></a>
+    </div>
+    <div class="section-label">Caribbean Latino</div>
+    <div class="section-title">Puerto Rican &amp; <em>Latino Caribbean</em></div>
+    <div class="product-grid">
+      <a href="index.html#download" class="product-card"><div class="product-img">🧄<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">Puerto Rico / Caribbean</div><h4>Sofrito Sauce (Jar)</h4><div class="product-desc">Puerto Rican herb and pepper base</div><div class="product-footer"><span class="product-price">$5.50</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🌿</div><div class="product-body"><div class="product-origin">Puerto Rico</div><h4>Recao / Culantro (Dried)</h4><div class="product-desc">Long-leaf coriander for sofrito</div><div class="product-footer"><span class="product-price">$3.50</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🫙</div><div class="product-body"><div class="product-origin">Dominican Republic</div><h4>Sazón Seasoning (Goya)</h4><div class="product-desc">Classic Latin rice and stew seasoning</div><div class="product-footer"><span class="product-price">$3.99</span><span class="order-btn">Order in App →</span></div></div></a>
+      <a href="index.html#download" class="product-card"><div class="product-img">🌿</div><div class="product-body"><div class="product-origin">Puerto Rico</div><h4>Adobo All-Purpose Seasoning</h4><div class="product-desc">Garlic, oregano and pepper blend</div><div class="product-footer"><span class="product-price">$4.50</span><span class="order-btn">Order in App →</span></div></div></a>
+    </div>
+  </div>
+
+  <section class="cta-section" id="download">
+    <h2>Order Mexican &amp; Latino<br><em>Groceries Today</em></h2>
+    <p>Download the CFM app and get 80+ authentic Mexican and Latino products delivered across Cleveland in under 30 minutes. First delivery free.</p>
+    <div class="app-buttons">
+      <a href="#" class="app-btn ios"><span class="si">🍎</span><span class="sl"><small>Download on the</small>App Store</span></a>
+      <a href="#" class="app-btn android"><span class="si">▶</span><span class="sl"><small>Get it on</small>Google Play</span></a>
+    </div>
+  </section>
+  <footer><p>© 2026 Cleveland African Mart LLC · Cleveland, Ohio</p><div class="footer-links"><a href="shop.html">All Categories</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="index.html">Home</a></div></footer>
+</body>
+</html>

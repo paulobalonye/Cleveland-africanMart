@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop African Groceries – Cleveland African Mart | Cleveland, Ohio</title>
+  <meta name="description" content="Shop 500+ authentic African groceries in Cleveland. West African, Somali, Mexican, Caribbean, and more. Fufu, egusi, palm oil, berbere, masa harina — delivered in 30 minutes." />
+  <meta name="keywords" content="African grocery store Cleveland, buy Nigerian food Cleveland, Somali grocery Cleveland Ohio, African spices Cleveland, egusi stockfish palm oil Cleveland, African food delivery Ohio" />
+  <link rel="canonical" href="https://clevelandafricanmart.com/shop.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clevelandafricanmart.com/shop.html" />
+  <meta property="og:title" content="Shop African Groceries – Cleveland African Mart" />
+  <meta property="og:description" content="500+ authentic African, Somali, Mexican & Caribbean groceries delivered in Cleveland, Ohio. Order from the CFM app." />
+  <meta property="og:image" content="https://clevelandafricanmart.com/CFM-LOGO.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "African Grocery Categories – Cleveland African Mart",
+    "url": "https://clevelandafricanmart.com/shop.html",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "West African Groceries", "url": "https://clevelandafricanmart.com/shop.html#west-african" },
+      { "@type": "ListItem", "position": 2, "name": "Somali & East African Groceries", "url": "https://clevelandafricanmart.com/shop.html#somali" },
+      { "@type": "ListItem", "position": 3, "name": "Mexican & Latino Groceries", "url": "https://clevelandafricanmart.com/shop.html#mexican" },
+      { "@type": "ListItem", "position": 4, "name": "Caribbean Groceries", "url": "https://clevelandafricanmart.com/shop.html#caribbean" },
+      { "@type": "ListItem", "position": 5, "name": "African Spices & Pantry", "url": "https://clevelandafricanmart.com/shop.html#spices" }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:  #0a1a0f; --dark2: #122018; --dark3: #0d2115;
+      --gold:  #d4a017; --gold-l: #f0c040; --gold-d: #b8880e;
+      --white: #ffffff; --gray: #9aab9e; --gray-l: #c5d4c9;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--dark); color: var(--white); }
+
+    /* ── TOP BAR ── */
+    .top-bar { background: var(--gold); text-align: center; padding: 8px 20px; font-size: 0.78rem; font-weight: 700; color: var(--dark); }
+    .top-bar a { color: var(--dark); text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(10,26,15,0.98); backdrop-filter: blur(12px);
+      padding: 0 48px; display: flex; align-items: center; justify-content: space-between;
+      height: 68px; position: sticky; top: 0; z-index: 200;
+      border-bottom: 1px solid rgba(212,160,23,0.15);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 40px; border-radius: 8px; }
+    .nav-brand { color: var(--gold); font-size: 0.95rem; font-weight: 800; line-height: 1.2; }
+    .nav-brand span { display: block; color: var(--gray); font-size: 0.65rem; font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links > a, .dropdown > .nav-link {
+      color: var(--gray-l); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px; transition: color 0.15s, background 0.15s; white-space: nowrap;
+    }
+    .nav-links > a:hover, .dropdown > .nav-link:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+    .nav-links > a.active, .dropdown.active > .nav-link { color: var(--gold); }
+    .dropdown { position: relative; }
+    .dropdown > .nav-link { cursor: default; display: flex; align-items: center; gap: 4px; }
+    .dropdown > .nav-link::after { content: '▾'; font-size: 0.7rem; color: var(--gray); }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--dark2); border: 1px solid rgba(212,160,23,0.15);
+      border-radius: 12px; padding: 8px; min-width: 220px; box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      color: var(--gray-l); text-decoration: none; font-size: 0.85rem; border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .dropdown-menu a:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+    .dropdown-menu .divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 0; }
+    .nav-cta {
+      background: var(--gold); color: var(--dark); font-weight: 800;
+      padding: 10px 22px; border-radius: 24px; text-decoration: none; font-size: 0.85rem;
+      margin-left: 8px; transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--gold-l); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 2px; }
+    #nav-toggle { display: none; }
+    .nav-mobile { display: none; }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; height: 60px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      #nav-toggle:checked ~ .nav-mobile {
+        display: flex; flex-direction: column; position: fixed;
+        top: 60px; left: 0; right: 0; background: var(--dark2);
+        border-bottom: 1px solid rgba(212,160,23,0.15); padding: 16px 20px;
+        gap: 4px; z-index: 199; max-height: calc(100vh - 60px); overflow-y: auto;
+      }
+      .nav-mobile a { color: var(--gray-l); text-decoration: none; font-size: 0.92rem; padding: 10px 14px; border-radius: 8px; display: block; }
+      .nav-mobile a:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+      .nav-mobile .section-label { font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); padding: 12px 14px 4px; font-weight: 700; }
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 56px 48px 40px; text-align: center;
+      background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(212,160,23,0.1) 0%, transparent 70%);
+    }
+    .page-header h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 900; margin-bottom: 10px; letter-spacing: -0.5px; }
+    .page-header h1 em { font-style: normal; color: var(--gold); }
+    .page-header p { color: var(--gray); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+
+    /* ── CATEGORY TILES ── */
+    .cat-tiles-section { padding: 0 48px 60px; }
+    .cat-tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .cat-tile {
+      display: block; text-decoration: none;
+      border-radius: 18px; padding: 28px 22px;
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative; overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .cat-tile:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(0,0,0,0.35); border-color: rgba(255,255,255,0.15); }
+    .cat-tile::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* Per-category gradients */
+    .ct-west    { background: linear-gradient(145deg, #0f3320 0%, #071a0e 100%); }
+    .ct-somali  { background: linear-gradient(145deg, #0a1f3a 0%, #060f1c 100%); }
+    .ct-mexican { background: linear-gradient(145deg, #2d1a00 0%, #160d00 100%); }
+    .ct-carib   { background: linear-gradient(145deg, #2a0e0e 0%, #140606 100%); }
+    .ct-central { background: linear-gradient(145deg, #1a1a00 0%, #0d0d00 100%); }
+    .ct-spices  { background: linear-gradient(145deg, #2d1500 0%, #160a00 100%); }
+    .ct-produce { background: linear-gradient(145deg, #0a2a0a 0%, #051405 100%); }
+    .ct-drinks  { background: linear-gradient(145deg, #001a2d 0%, #000d17 100%); }
+    .ct-snacks  { background: linear-gradient(145deg, #1a0a2a 0%, #0d0514 100%); }
+
+    .ct-badge {
+      display: inline-block; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 12px; margin-bottom: 14px;
+    }
+    .ct-west .ct-badge    { background: rgba(42,180,90,0.2); color: #6eda97; }
+    .ct-somali .ct-badge  { background: rgba(60,120,255,0.2); color: #88aaff; }
+    .ct-mexican .ct-badge { background: rgba(255,160,0,0.2); color: #ffcc66; }
+    .ct-carib .ct-badge   { background: rgba(255,80,80,0.2); color: #ff9999; }
+    .ct-central .ct-badge { background: rgba(200,200,0,0.2); color: #dddd66; }
+    .ct-spices .ct-badge  { background: rgba(255,100,0,0.2); color: #ffaa77; }
+    .ct-produce .ct-badge { background: rgba(50,200,50,0.2); color: #88ee88; }
+    .ct-drinks .ct-badge  { background: rgba(0,180,255,0.2); color: #77ddff; }
+    .ct-snacks .ct-badge  { background: rgba(180,0,255,0.2); color: #cc88ff; }
+
+    .ct-emoji { font-size: 2.6rem; display: block; margin-bottom: 12px; }
+    .cat-tile h3 { font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 5px; line-height: 1.25; }
+    .cat-tile .ct-sub { font-size: 0.75rem; color: rgba(255,255,255,0.45); line-height: 1.4; margin-bottom: 16px; }
+    .ct-count {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.72rem; font-weight: 700; color: var(--gold);
+    }
+    .ct-count::after { content: '→'; }
+
+    /* ── STICKY SECTION NAV ── */
+    .sticky-nav {
+      position: sticky; top: 68px; z-index: 100;
+      background: rgba(10,26,15,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212,160,23,0.12);
+      padding: 0 48px;
+      overflow-x: auto; white-space: nowrap;
+      scrollbar-width: none;
+      display: flex; gap: 0;
+    }
+    .sticky-nav::-webkit-scrollbar { display: none; }
+    .sticky-nav a {
+      color: var(--gray); text-decoration: none; font-size: 0.8rem; font-weight: 600;
+      padding: 14px 16px; border-bottom: 2px solid transparent; white-space: nowrap;
+      display: inline-block; transition: color 0.15s, border-color 0.15s;
+    }
+    .sticky-nav a:hover { color: var(--gold); border-bottom-color: rgba(212,160,23,0.4); }
+
+    /* ── PRODUCT SECTIONS ── */
+    .prod-section { padding: 64px 48px; }
+    .prod-section:nth-child(even) { background: var(--dark2); }
+
+    .prod-section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 36px; gap: 16px; flex-wrap: wrap;
+    }
+    .prod-section-header-left {}
+    .prod-flag { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+    .prod-section-header h2 { font-size: 1.65rem; font-weight: 900; line-height: 1.2; }
+    .prod-section-header h2 em { font-style: normal; color: var(--gold); }
+    .prod-section-header p { color: var(--gray); font-size: 0.84rem; margin-top: 5px; max-width: 520px; line-height: 1.5; }
+    .view-all-link {
+      color: var(--gold); text-decoration: none; font-size: 0.82rem; font-weight: 700;
+      white-space: nowrap; padding: 8px 16px;
+      border: 1px solid rgba(212,160,23,0.3); border-radius: 20px;
+      transition: background 0.15s, border-color 0.15s;
+      flex-shrink: 0;
+    }
+    .view-all-link:hover { background: rgba(212,160,23,0.08); border-color: var(--gold); }
+
+    /* ── PRODUCT CARDS ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+      gap: 16px;
+    }
+    .product-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px; overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .product-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,0.35); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+    .product-img {
+      height: 148px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      background: rgba(255,255,255,0.03);
+    }
+    .product-badge {
+      position: absolute; top: 10px; right: 10px;
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 0.5px;
+      text-transform: uppercase; padding: 3px 8px; border-radius: 10px;
+    }
+    .badge-new    { background: rgba(42,180,90,0.2); color: #6eda97; }
+    .badge-hot    { background: rgba(255,80,0,0.2); color: #ff9966; }
+    .badge-halal  { background: rgba(0,160,100,0.2); color: #44ddaa; }
+    .product-body { padding: 14px 14px 16px; }
+    .product-origin { font-size: 0.66rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; font-weight: 600; }
+    .product-body h4 { font-size: 0.88rem; font-weight: 700; color: var(--white); line-height: 1.35; margin-bottom: 12px; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .product-price { font-size: 1rem; font-weight: 900; color: var(--gold); }
+    .add-btn {
+      display: flex; align-items: center; gap: 5px;
+      background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.3);
+      color: var(--gold); border-radius: 8px; padding: 6px 12px;
+      font-size: 0.78rem; font-weight: 700; cursor: pointer;
+      font-family: inherit; transition: background 0.15s, color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .add-btn:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+
+    /* App download note */
+    .app-note {
+      margin-top: 24px; padding: 16px 20px;
+      background: rgba(212,160,23,0.05); border: 1px solid rgba(212,160,23,0.12);
+      border-radius: 12px; display: flex; align-items: center; gap: 12px;
+      font-size: 0.82rem; color: var(--gray);
+    }
+    .app-note span { font-size: 1.3rem; flex-shrink: 0; }
+    .app-note a { color: var(--gold); text-decoration: none; font-weight: 700; }
+
+    /* ── DOWNLOAD CTA ── */
+    .cta-band {
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212,160,23,0.08) 0%, transparent 70%);
+      text-align: center; padding: 88px 48px;
+    }
+    .cta-band h2 { font-size: 2rem; font-weight: 900; margin-bottom: 12px; }
+    .cta-band h2 em { font-style: normal; color: var(--gold); }
+    .cta-band p { color: var(--gray); margin: 0 auto 36px; max-width: 440px; line-height: 1.6; }
+    .app-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .app-btn {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(212,160,23,0.35);
+      color: var(--white); padding: 14px 24px; border-radius: 14px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .app-btn:hover { background: rgba(212,160,23,0.1); border-color: var(--gold); transform: translateY(-2px); }
+    .app-btn .si { font-size: 1.8rem; }
+    .app-btn .sl { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+    .app-btn .sl small { font-weight: 400; font-size: 0.68rem; color: var(--gray); }
+    .app-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+    .app-btn.primary:hover { background: var(--gold-l); }
+    .app-btn.primary small { color: rgba(10,26,15,0.65); }
+
+    /* ── FOOTER ── */
+    footer { background: #06110a; border-top: 1px solid rgba(212,160,23,0.15); }
+    .footer-top { padding: 56px 48px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+    .footer-brand .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand img { height: 36px; border-radius: 7px; }
+    .footer-brand strong { color: var(--gold); font-size: 0.92rem; }
+    .footer-brand p { color: var(--gray); font-size: 0.81rem; line-height: 1.6; max-width: 230px; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 8px; }
+    .footer-social a { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,160,23,0.15); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+    .footer-social a:hover { background: rgba(212,160,23,0.1); border-color: var(--gold); }
+    .footer-col h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 9px; }
+    .footer-col a { color: var(--gray); text-decoration: none; font-size: 0.82rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-app { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+    .footer-app-btn { display: flex; align-items: center; gap: 9px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,160,23,0.2); border-radius: 9px; padding: 9px 13px; color: var(--white); text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: background 0.2s, border-color 0.2s; }
+    .footer-app-btn:hover { background: rgba(212,160,23,0.08); border-color: var(--gold); }
+    .footer-app-btn .fi { font-size: 1.3rem; }
+    .footer-app-btn small { display: block; font-weight: 400; font-size: 0.63rem; color: var(--gray); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; max-width: 1200px; margin: 0 auto; }
+    .footer-bottom p { color: var(--gray); font-size: 0.77rem; }
+    .footer-bottom-links { display: flex; gap: 18px; }
+    .footer-bottom-links a { color: var(--gray); text-decoration: none; font-size: 0.77rem; transition: color 0.15s; }
+    .footer-bottom-links a:hover { color: var(--gold); }
+    .gold-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(212,160,23,0.3), transparent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) { .cat-tiles-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px) {
+      .cat-tiles-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .sticky-nav { top: 60px; }
+    }
+    @media (max-width: 640px) {
+      .page-header, .cat-tiles-section, .prod-section, .cta-band { padding-left: 20px; padding-right: 20px; }
+      .sticky-nav { padding: 0 16px; top: 60px; }
+      .cat-tiles-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .cat-tile { padding: 20px 16px; }
+      .ct-emoji { font-size: 2rem; }
+      .cat-tile h3 { font-size: 0.88rem; }
+      .prod-section-header { flex-direction: column; align-items: flex-start; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr; padding: 32px 20px; }
+      .footer-bottom { padding: 14px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">🚚 Free delivery on your first order · <a href="index.html">Back to Home</a></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="CFM-LOGO.png" alt="CFM" />
+      <div class="nav-brand">Cleveland African Mart <span>Authentic African Groceries</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="dropdown active">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="#west-african">🌍 West African</a>
+          <a href="#somali">🇸🇴 Somali &amp; East African</a>
+          <a href="#mexican">🌮 Mexican &amp; Latino</a>
+          <a href="#caribbean">🏝️ Caribbean</a>
+          <div class="divider"></div>
+          <a href="#spices">🌶️ Spices &amp; Pantry</a>
+          <a href="#produce">🌿 Fresh Produce</a>
+          <a href="#beverages">🥤 Beverages</a>
+          <a href="#snacks">🍫 Snacks</a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="index.html#download" class="nav-cta">Download App</a>
+    <label class="hamburger" for="nav-toggle"><span></span><span></span><span></span></label>
+  </nav>
+
+  <input type="checkbox" id="nav-toggle" />
+  <div class="nav-mobile">
+    <a href="index.html">🏠 Home</a>
+    <div class="section-label">Shop by Category</div>
+    <a href="#west-african">🌍 West African</a>
+    <a href="#somali">🇸🇴 Somali &amp; East African</a>
+    <a href="#mexican">🌮 Mexican &amp; Latino</a>
+    <a href="#caribbean">🏝️ Caribbean</a>
+    <a href="#spices">🌶️ Spices &amp; Pantry</a>
+    <a href="#produce">🌿 Fresh Produce</a>
+    <a href="#beverages">🥤 Beverages</a>
+    <a href="#snacks">🍫 Snacks</a>
+    <div class="section-label">Pages</div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html#download">📱 Download App</a>
+  </div>
+
+  <!-- Page header -->
+  <div class="page-header">
+    <h1>Shop by <em>Category</em></h1>
+    <p>500+ authentic products from West Africa, East Africa, Somalia, Mexico, the Caribbean and beyond — all delivered to your Cleveland door.</p>
+  </div>
+
+  <!-- Category tiles -->
+  <div class="cat-tiles-section">
+    <div class="cat-tiles-grid">
+
+      <a href="category-west-african.html" class="cat-tile ct-west">
+        <span class="ct-badge">Most Popular</span>
+        <span class="ct-emoji">🌍</span>
+        <h3>West African</h3>
+        <p class="ct-sub">Nigerian · Ghanaian · Ivorian · Cameroonian</p>
+        <span class="ct-count">120+ products</span>
+      </a>
+
+      <a href="category-somali.html" class="cat-tile ct-somali">
+        <span class="ct-badge">Halal</span>
+        <span class="ct-emoji">🇸🇴</span>
+        <h3>Somali &amp; East African</h3>
+        <p class="ct-sub">Somali · Ethiopian · Eritrean</p>
+        <span class="ct-count">60+ products</span>
+      </a>
+
+      <a href="category-mexican.html" class="cat-tile ct-mexican">
+        <span class="ct-badge">Latino</span>
+        <span class="ct-emoji">🌮</span>
+        <h3>Mexican &amp; Latino</h3>
+        <p class="ct-sub">Mexican · Puerto Rican · Caribbean Latino</p>
+        <span class="ct-count">80+ products</span>
+      </a>
+
+      <a href="category-caribbean.html" class="cat-tile ct-carib">
+        <span class="ct-badge">Island</span>
+        <span class="ct-emoji">🏝️</span>
+        <h3>Caribbean</h3>
+        <p class="ct-sub">Jamaican · Trinidadian · Haitian</p>
+        <span class="ct-count">50+ products</span>
+      </a>
+
+      <a href="category-central-african.html" class="cat-tile ct-central">
+        <span class="ct-badge">Africa</span>
+        <span class="ct-emoji">🫙</span>
+        <h3>Central &amp; Southern African</h3>
+        <p class="ct-sub">Zambian · Zimbabwean · Kenyan</p>
+        <span class="ct-count">40+ products</span>
+      </a>
+
+      <a href="category-spices.html" class="cat-tile ct-spices">
+        <span class="ct-badge">Pantry</span>
+        <span class="ct-emoji">🌶️</span>
+        <h3>Spices &amp; Pantry</h3>
+        <p class="ct-sub">Blends · Oils · Grains · Dried goods</p>
+        <span class="ct-count">200+ products</span>
+      </a>
+
+      <a href="category-produce.html" class="cat-tile ct-produce">
+        <span class="ct-badge">Fresh Daily</span>
+        <span class="ct-emoji">🌿</span>
+        <h3>Fresh Produce</h3>
+        <p class="ct-sub">Vegetables · Plantains · Root crops</p>
+        <span class="ct-count">30+ products</span>
+      </a>
+
+      <a href="category-beverages.html" class="cat-tile ct-drinks">
+        <span class="ct-badge">Drinks</span>
+        <span class="ct-emoji">🥤</span>
+        <h3>Beverages</h3>
+        <p class="ct-sub">Malta · Zobo · Teas · Imported drinks</p>
+        <span class="ct-count">35+ products</span>
+      </a>
+
+      <a href="category-snacks.html" class="cat-tile ct-snacks">
+        <span class="ct-badge">Treats</span>
+        <span class="ct-emoji">🍫</span>
+        <h3>Snacks &amp; Confections</h3>
+        <p class="ct-sub">Chin chin · Plantain chips · Candies</p>
+        <span class="ct-count">45+ products</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Sticky section nav -->
+  <div class="sticky-nav">
+    <a href="#west-african">🌍 West African</a>
+    <a href="#somali">🇸🇴 Somali</a>
+    <a href="#mexican">🌮 Mexican</a>
+    <a href="#caribbean">🏝️ Caribbean</a>
+    <a href="#central">🫙 Central African</a>
+    <a href="#spices">🌶️ Spices</a>
+    <a href="#produce">🌿 Produce</a>
+    <a href="#beverages">🥤 Beverages</a>
+    <a href="#snacks">🍫 Snacks</a>
+  </div>
+
+  <!-- ── WEST AFRICAN ── -->
+  <section class="prod-section" id="west-african">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#6eda97;">🌍 West African</div>
+        <h2>Nigerian, Ghanaian &amp; <em>More</em></h2>
+        <p>Fufu, egusi, palm oil, stockfish, crayfish, suya spice — the complete West African kitchen.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🫙<span class="product-badge badge-hot">Best Seller</span></div><div class="product-body"><div class="product-origin">Nigeria / Ghana</div><h4>Egusi Melon Seeds (Ground)</h4><div class="product-footer"><span class="product-price">$8.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌴<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">Nigeria / Cameroon</div><h4>Red Palm Oil (1 Litre)</h4><div class="product-footer"><span class="product-price">$12.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍚</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Pounded Yam Flour (2kg)</h4><div class="product-footer"><span class="product-price">$9.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🐟<span class="product-badge badge-new">New</span></div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Dried Stockfish (Okporoko)</h4><div class="product-footer"><span class="product-price">$14.00</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🫙</div><div class="product-body"><div class="product-origin">Nigeria / Cameroon</div><h4>Ground Crayfish</h4><div class="product-footer"><span class="product-price">$6.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌿</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Uziza Leaves (Dried)</h4><div class="product-footer"><span class="product-price">$4.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍚</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Fufu Flour (Cassava)</h4><div class="product-footer"><span class="product-price">$7.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌶️<span class="product-badge badge-hot">Hot</span></div><div class="product-body"><div class="product-origin">Nigeria / Cameroon</div><h4>Suya Spice Blend</h4><div class="product-footer"><span class="product-price">$5.99</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> See 120+ West African products in the CFM app. <a href="index.html#download">Download now to order →</a></div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── SOMALI & EAST AFRICAN ── -->
+  <section class="prod-section" id="somali">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#88aaff;">🇸🇴 Somali &amp; East African</div>
+        <h2>Somali, Ethiopian &amp; <em>Eritrean</em></h2>
+        <p>Suugo, camel milk powder, xawaash, berbere, teff flour &amp; essential East African staples.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🫙<span class="product-badge badge-halal">Halal</span></div><div class="product-body"><div class="product-origin">Somalia</div><h4>Suugo Sauce (Tomato Base)</h4><div class="product-footer"><span class="product-price">$6.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌾</div><div class="product-body"><div class="product-origin">Ethiopia / Eritrea</div><h4>Teff Flour (Injera Blend)</h4><div class="product-footer"><span class="product-price">$9.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌶️<span class="product-badge badge-hot">Hot</span></div><div class="product-body"><div class="product-origin">Ethiopia</div><h4>Berbere Spice Blend</h4><div class="product-footer"><span class="product-price">$7.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🥛<span class="product-badge badge-new">New</span></div><div class="product-body"><div class="product-origin">Somalia</div><h4>Camel Milk Powder</h4><div class="product-footer"><span class="product-price">$18.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍚<span class="product-badge badge-halal">Halal</span></div><div class="product-body"><div class="product-origin">East Africa</div><h4>Basmati Rice (5kg)</h4><div class="product-footer"><span class="product-price">$13.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🧄</div><div class="product-body"><div class="product-origin">Somalia</div><h4>Xawaash Spice Mix</h4><div class="product-footer"><span class="product-price">$6.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🫙</div><div class="product-body"><div class="product-origin">Ethiopia</div><h4>Nit'ir Qibe (Spiced Butter)</h4><div class="product-footer"><span class="product-price">$8.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌿</div><div class="product-body"><div class="product-origin">Ethiopia</div><h4>Mitmita Chili Powder</h4><div class="product-footer"><span class="product-price">$5.99</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> See 60+ Somali &amp; East African products in the app. <a href="index.html#download">Download now to order →</a></div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── MEXICAN ── -->
+  <section class="prod-section" id="mexican">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#ffcc66;">🌮 Mexican &amp; Latino</div>
+        <h2>Mexican, Puerto Rican &amp; <em>Caribbean Latino</em></h2>
+        <p>Masa harina, dried chiles, achiote, sofrito, tomatillos &amp; Latin pantry essentials.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🌽<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">Mexico</div><h4>Masa Harina (2kg)</h4><div class="product-footer"><span class="product-price">$6.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌶️</div><div class="product-body"><div class="product-origin">Mexico</div><h4>Dried Ancho Chiles</h4><div class="product-footer"><span class="product-price">$5.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🫙</div><div class="product-body"><div class="product-origin">Mexico / Yucatán</div><h4>Achiote Paste (Annatto)</h4><div class="product-footer"><span class="product-price">$4.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍅</div><div class="product-body"><div class="product-origin">Mexico</div><h4>Tomatillos (Canned)</h4><div class="product-footer"><span class="product-price">$3.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🧄<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">Puerto Rico / Caribbean</div><h4>Sofrito Sauce (Jar)</h4><div class="product-footer"><span class="product-price">$5.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌿</div><div class="product-body"><div class="product-origin">Puerto Rico</div><h4>Recao / Culantro (Dried)</h4><div class="product-footer"><span class="product-price">$3.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌶️</div><div class="product-body"><div class="product-origin">Mexico</div><h4>Chipotle Peppers in Adobo</h4><div class="product-footer"><span class="product-price">$3.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🫙<span class="product-badge badge-new">New</span></div><div class="product-body"><div class="product-origin">Oaxaca, Mexico</div><h4>Mole Negro Paste</h4><div class="product-footer"><span class="product-price">$9.99</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> Browse 80+ Mexican &amp; Latino products in the app. <a href="index.html#download">Download now to order →</a></div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── CARIBBEAN ── -->
+  <section class="prod-section" id="caribbean">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#ff9999;">🏝️ Caribbean</div>
+        <h2>Jamaican, Trinidadian &amp; <em>Haitian</em></h2>
+        <p>Scotch bonnet, ackee, jerk seasoning, plantains &amp; tropical pantry essentials.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🌶️<span class="product-badge badge-hot">Hot</span></div><div class="product-body"><div class="product-origin">Jamaica / Caribbean</div><h4>Scotch Bonnet Peppers (Dried)</h4><div class="product-footer"><span class="product-price">$5.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🥫</div><div class="product-body"><div class="product-origin">Jamaica</div><h4>Ackee (Canned)</h4><div class="product-footer"><span class="product-price">$7.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌿<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">Jamaica</div><h4>Jerk Seasoning (Walkerswood)</h4><div class="product-footer"><span class="product-price">$6.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍌</div><div class="product-body"><div class="product-origin">Caribbean / West Africa</div><h4>Green Plantains</h4><div class="product-footer"><span class="product-price">$3.99/lb</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌾</div><div class="product-body"><div class="product-origin">Jamaica</div><h4>Jamaican Curry Powder</h4><div class="product-footer"><span class="product-price">$5.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🫙</div><div class="product-body"><div class="product-origin">Jamaica</div><h4>Grace Cock Soup Mix</h4><div class="product-footer"><span class="product-price">$2.99</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> See all Caribbean products in the app. <a href="index.html#download">Download now to order →</a></div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── CENTRAL & SOUTHERN AFRICAN ── -->
+  <section class="prod-section" id="central">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#dddd66;">🫙 Central &amp; Southern African</div>
+        <h2>Zambian, Zimbabwean &amp; <em>Kenyan</em></h2>
+        <p>Ugali flour, kapenta dried fish, groundnut butter, impwa &amp; central African staples.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🌽</div><div class="product-body"><div class="product-origin">East / Southern Africa</div><h4>Ugali / Mealie Meal Flour</h4><div class="product-footer"><span class="product-price">$7.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🐟<span class="product-badge badge-new">New</span></div><div class="product-body"><div class="product-origin">Zambia / Zimbabwe</div><h4>Kapenta Dried Fish</h4><div class="product-footer"><span class="product-price">$9.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🥜</div><div class="product-body"><div class="product-origin">Southern Africa</div><h4>Groundnut Butter (Natural)</h4><div class="product-footer"><span class="product-price">$6.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🫙</div><div class="product-body"><div class="product-origin">Kenya / Tanzania</div><h4>Pilau Masala Spice Mix</h4><div class="product-footer"><span class="product-price">$5.99</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> See all Central &amp; Southern African products in the app. <a href="index.html#download">Download now to order →</a></div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── SPICES & PANTRY ── -->
+  <section class="prod-section" id="spices">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#ffaa77;">🌶️ Spices &amp; Pantry</div>
+        <h2>Pan-African <em>Spices, Oils &amp; Pantry</em></h2>
+        <p>The building blocks of authentic African cooking — dried spices, artisan blends, oils and grains.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🧂</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Iru / Dawadawa Locust Bean</h4><div class="product-footer"><span class="product-price">$4.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌿</div><div class="product-body"><div class="product-origin">West Africa</div><h4>African Negro Pepper (Uda)</h4><div class="product-footer"><span class="product-price">$3.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🫙</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Ogiri Fermented Seeds</h4><div class="product-footer"><span class="product-price">$4.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌱</div><div class="product-body"><div class="product-origin">East Africa / Somalia</div><h4>Fenugreek Seeds (Hulba)</h4><div class="product-footer"><span class="product-price">$3.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌴</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Coconut Oil (Cold-Pressed)</h4><div class="product-footer"><span class="product-price">$10.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🧄</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Selim Pepper (Grains)</h4><div class="product-footer"><span class="product-price">$4.99</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> 200+ spices &amp; pantry items in the app. <a href="index.html#download">Download now to order →</a></div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── FRESH PRODUCE ── -->
+  <section class="prod-section" id="produce">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#88ee88;">🌿 Fresh Produce</div>
+        <h2>Fresh <em>African &amp; Tropical Vegetables</em></h2>
+        <p>Garden eggs, bitter leaf, ugu, plantains, cocoyam — harvested fresh, delivered same day.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🍆</div><div class="product-body"><div class="product-origin">West Africa</div><h4>African Garden Eggs</h4><div class="product-footer"><span class="product-price">$3.99/bag</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌿</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Fresh Bitter Leaf (Dried)</h4><div class="product-footer"><span class="product-price">$4.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍌<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">West Africa / Caribbean</div><h4>Ripe Plantains</h4><div class="product-footer"><span class="product-price">$2.99/lb</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🫚</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Taro Root (Cocoyam)</h4><div class="product-footer"><span class="product-price">$3.50/lb</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌶️</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Fresh Tatashe Peppers</h4><div class="product-footer"><span class="product-price">$4.99/bag</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🥬</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Ugu / Fluted Pumpkin Leaf</h4><div class="product-footer"><span class="product-price">$4.50</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> Fresh produce availability changes daily. <a href="index.html#download">Download the app to see today's stock →</a></div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── BEVERAGES ── -->
+  <section class="prod-section" id="beverages">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#77ddff;">🥤 Beverages</div>
+        <h2>African &amp; <em>International Drinks</em></h2>
+        <p>Malta, zobo, hibiscus tea, Ethiopian coffee, Bigi soda &amp; imported favourites.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🍺<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Malta Guinness (6-pack)</h4><div class="product-footer"><span class="product-price">$9.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🌺</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Dried Hibiscus / Zobo Leaves</h4><div class="product-footer"><span class="product-price">$5.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍵</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Moringa Leaf Tea (20 bags)</h4><div class="product-footer"><span class="product-price">$7.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🥤</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Bigi Cola (500ml)</h4><div class="product-footer"><span class="product-price">$2.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">☕<span class="product-badge badge-new">New</span></div><div class="product-body"><div class="product-origin">Ethiopia</div><h4>Ethiopian Coffee Beans (250g)</h4><div class="product-footer"><span class="product-price">$11.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🧃</div><div class="product-body"><div class="product-origin">East Africa</div><h4>Tamarind Drink (1L)</h4><div class="product-footer"><span class="product-price">$4.50</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> Browse all drinks &amp; beverages in the app. <a href="index.html#download">Download now to order →</a></div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── SNACKS ── -->
+  <section class="prod-section" id="snacks">
+    <div class="prod-section-header">
+      <div class="prod-section-header-left">
+        <div class="prod-flag" style="color:#cc88ff;">🍫 Snacks &amp; Confections</div>
+        <h2>African <em>Snacks &amp; Sweet Treats</em></h2>
+        <p>Chin chin, plantain chips, kulikuli, coconut candy &amp; imported African sweets.</p>
+      </div>
+      <a href="index.html#download" class="view-all-link">View all in app →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img">🍩<span class="product-badge badge-hot">Popular</span></div><div class="product-body"><div class="product-origin">Nigeria / Ghana</div><h4>Chin Chin (Honey &amp; Spice)</h4><div class="product-footer"><span class="product-price">$5.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍌</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Plantain Chips (Spiced)</h4><div class="product-footer"><span class="product-price">$4.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🥜</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Kulikuli Groundnut Cake</h4><div class="product-footer"><span class="product-price">$4.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🥥</div><div class="product-body"><div class="product-origin">West Africa</div><h4>Coconut Candy (Tablet)</h4><div class="product-footer"><span class="product-price">$3.50</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍬</div><div class="product-body"><div class="product-origin">Nigeria</div><h4>Tom Tom Candy Assorted</h4><div class="product-footer"><span class="product-price">$2.99</span><button class="add-btn">+ Add</button></div></div></div>
+      <div class="product-card"><div class="product-img">🍪<span class="product-badge badge-new">New</span></div><div class="product-body"><div class="product-origin">West Africa</div><h4>Coconut Biscuits (Pack)</h4><div class="product-footer"><span class="product-price">$4.50</span><button class="add-btn">+ Add</button></div></div></div>
+    </div>
+    <div class="app-note"><span>📱</span> Browse all snacks &amp; confections in the app. <a href="index.html#download">Download now to order →</a></div>
+  </section>
+
+  <!-- Download CTA -->
+  <section class="cta-band">
+    <h2>Ready to <em>Order?</em></h2>
+    <p>Download the CFM app and get everything delivered to your door in 30 minutes. First delivery free.</p>
+    <div class="app-buttons">
+      <a href="#" class="app-btn primary"><span class="si">🍎</span><span class="sl"><small>Download on the</small>App Store</span></a>
+      <a href="#" class="app-btn"><span class="si">▶</span><span class="sl"><small>Get it on</small>Google Play</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-row"><img src="CFM-LOGO.png" alt="CFM" /><strong>Cleveland African Mart</strong></div>
+        <p>Bringing authentic African, Somali, and international groceries to Cleveland families since 2022.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/clevelandafricanmart" target="_blank">📘</a>
+          <a href="#">📸</a><a href="#">🎵</a><a href="#">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#west-african">West African</a></li>
+          <li><a href="#somali">Somali &amp; East African</a></li>
+          <li><a href="#mexican">Mexican &amp; Latino</a></li>
+          <li><a href="#caribbean">Caribbean</a></li>
+          <li><a href="#spices">Spices &amp; Pantry</a></li>
+          <li><a href="#produce">Fresh Produce</a></li>
+          <li><a href="#beverages">Beverages</a></li>
+          <li><a href="#snacks">Snacks &amp; Confections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Become a Seller</a></li>
+          <li><a href="#">Blog &amp; Recipes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center / FAQ</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Returns &amp; Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <br /><h4>Get the App</h4>
+        <div class="footer-app">
+          <a href="#" class="footer-app-btn"><span class="fi">🍎</span><span><small>Download on the</small>App Store</span></a>
+          <a href="#" class="footer-app-btn"><span class="fi">▶</span><span><small>Get it on</small>Google Play</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cleveland African Mart LLC · Cleveland, Ohio · All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

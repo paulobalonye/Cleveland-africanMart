@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Cleveland African Mart | African Grocery Delivery in Cleveland</title>
+  <meta name="description" content="Learn about Cleveland African Mart — Cleveland's home for authentic African, Somali, and international groceries. Founded by the African community in Cleveland, Ohio." />
+  <meta name="keywords" content="Cleveland African Mart about, African grocery store Cleveland Ohio, African community Cleveland, Nigerian Ghanaian food Cleveland, African food delivery Cleveland" />
+  <link rel="canonical" href="https://clevelandafricanmart.com/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clevelandafricanmart.com/about.html" />
+  <meta property="og:title" content="About Cleveland African Mart – African Grocery Delivery in Cleveland" />
+  <meta property="og:description" content="Founded in 2022 by Cleveland's African diaspora community. 500+ authentic products, 30-min delivery, community-first mission." />
+  <meta property="og:image" content="https://clevelandafricanmart.com/CFM-LOGO.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Cleveland African Mart",
+    "url": "https://clevelandafricanmart.com/about.html",
+    "description": "Cleveland African Mart was founded in 2022 to bring authentic African and international groceries to Cleveland's diverse communities. 500+ products delivered in 30 minutes.",
+    "mainEntity": {
+      "@type": "GroceryStore",
+      "name": "Cleveland African Mart",
+      "foundingDate": "2022",
+      "description": "Authentic African, Somali, and international grocery delivery in Cleveland, Ohio.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Cleveland", "addressRegion": "OH", "addressCountry": "US" }
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:  #0a1a0f; --dark2: #122018; --dark3: #0d2115;
+      --gold:  #d4a017; --gold-l: #f0c040;
+      --white: #ffffff; --gray: #9aab9e; --gray-l: #c5d4c9; --green: #2a6640;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--dark); color: var(--white); }
+    .top-bar { background: var(--gold); text-align: center; padding: 8px 20px; font-size: 0.78rem; font-weight: 700; color: var(--dark); }
+    .top-bar a { color: var(--dark); text-decoration: underline; }
+    nav {
+      background: rgba(10,26,15,0.98); backdrop-filter: blur(12px);
+      padding: 0 48px; display: flex; align-items: center; justify-content: space-between;
+      height: 68px; position: sticky; top: 0; z-index: 200;
+      border-bottom: 1px solid rgba(212,160,23,0.15);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 40px; border-radius: 8px; }
+    .nav-brand { color: var(--gold); font-size: 0.95rem; font-weight: 800; line-height: 1.2; }
+    .nav-brand span { display: block; color: var(--gray); font-size: 0.65rem; font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links > a, .dropdown > .nav-link {
+      color: var(--gray-l); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px; transition: color 0.15s, background 0.15s;
+    }
+    .nav-links > a:hover, .dropdown > .nav-link:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+    .nav-links > a.active { color: var(--gold); }
+    .dropdown { position: relative; }
+    .dropdown > .nav-link { cursor: default; display: flex; align-items: center; gap: 4px; }
+    .dropdown > .nav-link::after { content: '▾'; font-size: 0.7rem; color: var(--gray); }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--dark2); border: 1px solid rgba(212,160,23,0.15);
+      border-radius: 12px; padding: 8px; min-width: 220px; box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      color: var(--gray-l); text-decoration: none; font-size: 0.85rem; border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .dropdown-menu a:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+    .dropdown-menu .divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 0; }
+    .nav-cta {
+      background: var(--gold); color: var(--dark); font-weight: 800;
+      padding: 10px 22px; border-radius: 24px; text-decoration: none; font-size: 0.85rem;
+      margin-left: 8px; transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--gold-l); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 2px; }
+    #nav-toggle { display: none; }
+    .nav-mobile { display: none; }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; height: 60px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      #nav-toggle:checked ~ .nav-mobile {
+        display: flex; flex-direction: column; position: fixed;
+        top: 60px; left: 0; right: 0; background: var(--dark2);
+        border-bottom: 1px solid rgba(212,160,23,0.15); padding: 16px 20px;
+        gap: 4px; z-index: 199; max-height: calc(100vh - 60px); overflow-y: auto;
+      }
+      .nav-mobile a { color: var(--gray-l); text-decoration: none; font-size: 0.92rem; padding: 10px 14px; border-radius: 8px; display: block; }
+      .nav-mobile a:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+      .nav-mobile .section-label { font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); padding: 12px 14px 4px; font-weight: 700; }
+    }
+
+    .page-hero {
+      padding: 60px 48px 48px; text-align: center;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(212,160,23,0.08) 0%, transparent 70%);
+      border-bottom: 1px solid rgba(212,160,23,0.1);
+    }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 10px; }
+    .page-hero h1 em { font-style: normal; color: var(--gold); }
+    .page-hero p { color: var(--gray); font-size: 1rem; max-width: 540px; margin: 0 auto; line-height: 1.65; }
+
+    .section { padding: 80px 48px; }
+    .section.dark2 { background: var(--dark2); }
+    .gold-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.15; }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header h2 { font-size: 1.9rem; font-weight: 900; margin-bottom: 10px; }
+    .section-header h2 em { font-style: normal; color: var(--gold); }
+    .section-header p { color: var(--gray); max-width: 520px; margin: 0 auto; line-height: 1.6; }
+    .underline { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; margin: 14px auto 0; }
+
+    /* Story */
+    .story-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 980px; margin: 0 auto; }
+    .story-visual {
+      background: var(--dark2); border: 1px solid rgba(212,160,23,0.15);
+      border-radius: 20px; padding: 40px; text-align: center;
+    }
+    .story-visual img { width: 140px; height: 140px; object-fit: contain; margin-bottom: 20px; }
+    .story-visual p { color: var(--gray); font-size: 0.82rem; font-style: italic; line-height: 1.6; }
+    .story-text h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; }
+    .story-text h2 em { font-style: normal; color: var(--gold); }
+    .story-text p { color: var(--gray); font-size: 0.92rem; line-height: 1.75; margin-bottom: 16px; }
+
+    /* Values */
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; max-width: 920px; margin: 0 auto; }
+    .value-card {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(212,160,23,0.1);
+      border-radius: 16px; padding: 28px 22px; text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .value-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .value-icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .value-card h3 { font-size: 0.95rem; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+    .value-card p { font-size: 0.84rem; color: var(--gray); line-height: 1.6; }
+
+    /* Stats */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; text-align: center; }
+    .big-stat .num { font-size: 2.6rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .big-stat .lbl { font-size: 0.78rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+    /* Community */
+    .community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 840px; margin: 0 auto; }
+    .community-card {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(212,160,23,0.1);
+      border-radius: 14px; padding: 24px 20px;
+    }
+    .community-card h4 { color: var(--gold); font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; }
+    .community-card p { color: var(--gray); font-size: 0.83rem; line-height: 1.6; }
+
+    /* CTA */
+    .cta-section {
+      text-align: center; padding: 88px 48px;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212,160,23,0.08) 0%, transparent 70%);
+    }
+    .cta-section h2 { font-size: 2rem; font-weight: 900; margin-bottom: 12px; }
+    .cta-section h2 em { font-style: normal; color: var(--gold); }
+    .cta-section p { color: var(--gray); margin: 0 auto 36px; max-width: 440px; }
+    .app-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .app-btn {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(212,160,23,0.35);
+      color: var(--white); padding: 14px 24px; border-radius: 14px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .app-btn:hover { background: rgba(212,160,23,0.1); border-color: var(--gold); transform: translateY(-2px); }
+    .app-btn .si { font-size: 1.8rem; }
+    .app-btn .sl { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+    .app-btn .sl small { font-weight: 400; font-size: 0.68rem; color: var(--gray); }
+    .app-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+    .app-btn.primary:hover { background: var(--gold-l); }
+    .app-btn.primary small { color: rgba(10,26,15,0.65); }
+
+    footer { background: #06110a; border-top: 1px solid rgba(212,160,23,0.15); }
+    .footer-top { padding: 56px 48px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+    .footer-brand .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand img { height: 36px; border-radius: 7px; }
+    .footer-brand strong { color: var(--gold); font-size: 0.92rem; }
+    .footer-brand p { color: var(--gray); font-size: 0.81rem; line-height: 1.6; max-width: 230px; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 8px; }
+    .footer-social a { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,160,23,0.15); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+    .footer-social a:hover { background: rgba(212,160,23,0.1); border-color: var(--gold); }
+    .footer-col h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 9px; }
+    .footer-col a { color: var(--gray); text-decoration: none; font-size: 0.82rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-app { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+    .footer-app-btn { display: flex; align-items: center; gap: 9px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,160,23,0.2); border-radius: 9px; padding: 9px 13px; color: var(--white); text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: background 0.2s, border-color 0.2s; }
+    .footer-app-btn:hover { background: rgba(212,160,23,0.08); border-color: var(--gold); }
+    .footer-app-btn .fi { font-size: 1.3rem; }
+    .footer-app-btn small { display: block; font-weight: 400; font-size: 0.63rem; color: var(--gray); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; max-width: 1200px; margin: 0 auto; }
+    .footer-bottom p { color: var(--gray); font-size: 0.77rem; }
+    .footer-bottom-links { display: flex; gap: 18px; }
+    .footer-bottom-links a { color: var(--gray); text-decoration: none; font-size: 0.77rem; transition: color 0.15s; }
+    .footer-bottom-links a:hover { color: var(--gold); }
+
+    @media (max-width: 900px) { .story-wrap, .community-grid { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: 1fr 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .page-hero, .section, .cta-section { padding-left: 20px; padding-right: 20px; } .stats-grid { grid-template-columns: 1fr 1fr; } .footer-top { grid-template-columns: 1fr; padding: 32px 20px; } .footer-bottom { padding: 14px 20px; flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">🚚 Free delivery on your first order · <a href="shop.html">Browse all categories</a></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="CFM-LOGO.png" alt="CFM" />
+      <div class="nav-brand">Cleveland African Mart <span>Authentic African Groceries</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="category-west-african.html">🌍 West African</a>
+          <a href="category-somali.html">🇸🇴 Somali &amp; East African</a>
+          <a href="category-mexican.html">🌮 Mexican &amp; Latino</a>
+          <a href="category-caribbean.html">🏝️ Caribbean</a>
+          <div class="divider"></div>
+          <a href="category-spices.html">🌶️ Spices &amp; Pantry</a>
+          <a href="category-produce.html">🌿 Fresh Produce</a>
+          <a href="category-beverages.html">🥤 Beverages</a>
+          <a href="category-snacks.html">🍫 Snacks</a>
+        </div>
+      </div>
+      <a href="about.html" class="active">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="index.html#download" class="nav-cta">Download App</a>
+    <label class="hamburger" for="nav-toggle"><span></span><span></span><span></span></label>
+  </nav>
+
+  <input type="checkbox" id="nav-toggle" />
+  <div class="nav-mobile">
+    <a href="index.html">🏠 Home</a>
+    <div class="section-label">Shop by Category</div>
+    <a href="category-west-african.html">🌍 West African</a>
+    <a href="category-somali.html">🇸🇴 Somali &amp; East African</a>
+    <a href="category-mexican.html">🌮 Mexican &amp; Latino</a>
+    <a href="category-caribbean.html">🏝️ Caribbean</a>
+    <a href="category-spices.html">🌶️ Spices &amp; Pantry</a>
+    <a href="category-produce.html">🌿 Fresh Produce</a>
+    <div class="section-label">Pages</div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html#download">📱 Download App</a>
+  </div>
+
+  <div class="page-hero">
+    <h1>About <em>Cleveland African Mart</em></h1>
+    <p>We are Cleveland's home for authentic African, Somali, and international groceries — founded by the community, built for the community.</p>
+  </div>
+
+  <!-- Story -->
+  <section class="section" id="story">
+    <div class="story-wrap">
+      <div class="story-visual">
+        <img src="CFM-LOGO.png" alt="Cleveland African Mart" />
+        <p>"We started CFM because we knew what it felt like to miss the taste of home — and we believed Cleveland's African families deserved better."</p>
+      </div>
+      <div class="story-text">
+        <h2>Our <em>Story</em></h2>
+        <p>Cleveland African Mart was founded in 2022 by members of Cleveland's African diaspora community who were tired of driving hours to find authentic ingredients — or settling for substitutes that simply weren't the same.</p>
+        <p>We started with a simple idea: build a grocery service that truly understands what African families need. Not just the staple items — but the exact brands, the regional specialties, the fresh produce and dried fish that make a meal feel like home.</p>
+        <p>Today, CFM serves thousands of families across the greater Cleveland area. We carry 500+ products from West Africa, East Africa, Somalia, the Caribbean, Latin America, and beyond — all available through our mobile app with delivery in under 30 minutes.</p>
+        <p>We're not just a grocery service. We're a community hub — supporting local African events, partnering with community organizations, and helping Cleveland's diverse immigrant families stay connected to their culture through food.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- Stats -->
+  <section class="section dark2">
+    <div class="section-header">
+      <h2>CFM by the <em>Numbers</em></h2>
+      <div class="underline"></div>
+    </div>
+    <div class="stats-grid">
+      <div class="big-stat"><div class="num">2,400+</div><div class="lbl">Customers Served</div></div>
+      <div class="big-stat"><div class="num">500+</div><div class="lbl">Products</div></div>
+      <div class="big-stat"><div class="num">4.9★</div><div class="lbl">App Rating</div></div>
+      <div class="big-stat"><div class="num">30 min</div><div class="lbl">Avg Delivery</div></div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- Mission & Values -->
+  <section class="section" id="mission">
+    <div class="section-header">
+      <h2>Our <em>Mission &amp; Values</em></h2>
+      <p>Everything we do is rooted in these four commitments to our community.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🌍</div>
+        <h3>Authenticity First</h3>
+        <p>We never substitute. Every product on CFM is the real thing — sourced from verified African and international suppliers who understand what authentic means.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Community-Driven</h3>
+        <p>CFM was built by the community, for the community. A portion of every sale goes back to support local African cultural programs and events in Cleveland.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Speed &amp; Reliability</h3>
+        <p>We understand that fresh food can't wait. Our logistics network is built for speed — delivering across Cleveland in under 30 minutes, every day of the week.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌱</div>
+        <h3>Inclusive &amp; Welcoming</h3>
+        <p>From West African to Somali to Mexican to Caribbean — CFM is for everyone who loves diverse, authentic food. Every kitchen, every culture, welcome here.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- Community -->
+  <section class="section dark2">
+    <div class="section-header">
+      <h2>Our <em>Community</em> Commitments</h2>
+      <p>CFM gives back — here's how we invest in Cleveland's African community.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="community-grid">
+      <div class="community-card">
+        <h4>🎉 Cultural Events Sponsorship</h4>
+        <p>We sponsor and support African cultural events, festivals, and celebrations across Cleveland — keeping our community's traditions alive and thriving.</p>
+      </div>
+      <div class="community-card">
+        <h4>🏫 Youth Programs</h4>
+        <p>A portion of every CFM order supports youth literacy and cultural programs for African immigrant families in Cleveland's school system.</p>
+      </div>
+      <div class="community-card">
+        <h4>🛒 Supplier Partnerships</h4>
+        <p>We prioritize partnering with African-owned food suppliers and import businesses, helping grow economic opportunity within our community.</p>
+      </div>
+      <div class="community-card">
+        <h4>🥘 Community Meals</h4>
+        <p>We donate groceries to community meal programs and food banks serving Cleveland's African and immigrant families every month.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Join the <em>CFM Family</em></h2>
+    <p>Download the app and start shopping authentic African groceries in Cleveland today.</p>
+    <div class="app-buttons">
+      <a href="#" class="app-btn primary"><span class="si">🍎</span><span class="sl"><small>Download on the</small>App Store</span></a>
+      <a href="#" class="app-btn"><span class="si">▶</span><span class="sl"><small>Get it on</small>Google Play</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-row"><img src="CFM-LOGO.png" alt="CFM" /><strong>Cleveland African Mart</strong></div>
+        <p>Bringing authentic African, Somali, and international groceries to Cleveland families since 2022.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/clevelandafricanmart" target="_blank">📘</a>
+          <a href="#">📸</a><a href="#">🎵</a><a href="#">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="category-west-african.html">West African</a></li>
+          <li><a href="category-somali.html">Somali &amp; East African</a></li>
+          <li><a href="category-mexican.html">Mexican &amp; Latino</a></li>
+          <li><a href="category-caribbean.html">Caribbean</a></li>
+          <li><a href="category-spices.html">Spices &amp; Pantry</a></li>
+          <li><a href="category-produce.html">Fresh Produce</a></li>
+          <li><a href="category-beverages.html">Beverages</a></li>
+          <li><a href="category-snacks.html">Snacks</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog &amp; Recipes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center / FAQ</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Returns &amp; Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <br /><h4>Get the App</h4>
+        <div class="footer-app">
+          <a href="#" class="footer-app-btn"><span class="fi">🍎</span><span><small>Download on the</small>App Store</span></a>
+          <a href="#" class="footer-app-btn"><span class="fi">▶</span><span><small>Get it on</small>Google Play</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cleveland African Mart LLC · Cleveland, Ohio · All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

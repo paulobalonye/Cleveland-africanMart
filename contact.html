@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Cleveland African Mart | Cleveland, Ohio</title>
+  <meta name="description" content="Contact Cleveland African Mart. Questions about orders, delivery, or products? Call, WhatsApp, or email us. African grocery delivery across Cleveland, Ohio." />
+  <meta name="keywords" content="Cleveland African Mart contact, African grocery Cleveland Ohio, African food delivery contact, CFM Cleveland phone number" />
+  <link rel="canonical" href="https://clevelandafricanmart.com/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clevelandafricanmart.com/contact.html" />
+  <meta property="og:title" content="Contact Cleveland African Mart" />
+  <meta property="og:description" content="Get in touch with Cleveland African Mart. Order support, product questions, wholesale inquiries and more." />
+  <meta property="og:image" content="https://clevelandafricanmart.com/CFM-LOGO.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Cleveland African Mart",
+    "url": "https://clevelandafricanmart.com/contact.html",
+    "description": "Contact us for order support, delivery questions, wholesale inquiries, or general feedback.",
+    "mainEntity": {
+      "@type": "GroceryStore",
+      "name": "Cleveland African Mart",
+      "telephone": "+1-216-555-0000",
+      "email": "hello@clevelandafricanmart.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Cleveland", "addressRegion": "OH", "addressCountry": "US" }
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:  #0a1a0f; --dark2: #122018; --dark3: #0d2115;
+      --gold:  #d4a017; --gold-l: #f0c040; --gold-d: #b8880e;
+      --white: #ffffff; --gray:  #9aab9e; --gray-l: #c5d4c9; --green: #2a6640;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--dark); color: var(--white); }
+
+    .top-bar { background: var(--gold); text-align: center; padding: 8px 20px; font-size: 0.78rem; font-weight: 700; color: var(--dark); }
+    .top-bar a { color: var(--dark); text-decoration: underline; }
+
+    nav {
+      background: rgba(10,26,15,0.98); backdrop-filter: blur(12px);
+      padding: 0 48px; display: flex; align-items: center; justify-content: space-between;
+      height: 68px; position: sticky; top: 0; z-index: 200;
+      border-bottom: 1px solid rgba(212,160,23,0.15);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 40px; border-radius: 8px; }
+    .nav-brand { color: var(--gold); font-size: 0.95rem; font-weight: 800; line-height: 1.2; }
+    .nav-brand span { display: block; color: var(--gray); font-size: 0.65rem; font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links > a, .dropdown > .nav-link {
+      color: var(--gray-l); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px; transition: color 0.15s, background 0.15s; white-space: nowrap;
+    }
+    .nav-links > a:hover, .dropdown > .nav-link:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+    .nav-links > a.active { color: var(--gold); }
+    .dropdown { position: relative; }
+    .dropdown > .nav-link { cursor: default; display: flex; align-items: center; gap: 4px; }
+    .dropdown > .nav-link::after { content: '▾'; font-size: 0.7rem; color: var(--gray); }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--dark2); border: 1px solid rgba(212,160,23,0.15);
+      border-radius: 12px; padding: 8px; min-width: 220px; box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      color: var(--gray-l); text-decoration: none; font-size: 0.85rem; border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .dropdown-menu a:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+    .dropdown-menu .divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 0; }
+    .nav-cta {
+      background: var(--gold); color: var(--dark); font-weight: 800;
+      padding: 10px 22px; border-radius: 24px; text-decoration: none; font-size: 0.85rem;
+      margin-left: 8px; transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--gold-l); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 2px; }
+    #nav-toggle { display: none; }
+    .nav-mobile { display: none; }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; height: 60px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      #nav-toggle:checked ~ .nav-mobile {
+        display: flex; flex-direction: column; position: fixed;
+        top: 60px; left: 0; right: 0; background: var(--dark2);
+        border-bottom: 1px solid rgba(212,160,23,0.15); padding: 16px 20px;
+        gap: 4px; z-index: 199; max-height: calc(100vh - 60px); overflow-y: auto;
+      }
+      .nav-mobile a { color: var(--gray-l); text-decoration: none; font-size: 0.92rem; padding: 10px 14px; border-radius: 8px; display: block; }
+      .nav-mobile a:hover { color: var(--gold); background: rgba(212,160,23,0.07); }
+      .nav-mobile .section-label { font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); padding: 12px 14px 4px; font-weight: 700; }
+    }
+
+    /* Page hero */
+    .page-hero {
+      padding: 60px 48px 48px; text-align: center;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(212,160,23,0.08) 0%, transparent 70%);
+      border-bottom: 1px solid rgba(212,160,23,0.1);
+    }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 10px; }
+    .page-hero h1 em { font-style: normal; color: var(--gold); }
+    .page-hero p { color: var(--gray); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+
+    /* Contact layout */
+    .contact-wrap {
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 56px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .contact-info h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+    .contact-info h2 em { font-style: normal; color: var(--gold); }
+    .contact-info > p { color: var(--gray); font-size: 0.9rem; line-height: 1.65; margin-bottom: 36px; max-width: 340px; }
+
+    .info-block { display: flex; gap: 16px; margin-bottom: 28px; }
+    .info-icon {
+      width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+      background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .info-body h4 { font-size: 0.82rem; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+    .info-body p, .info-body a { font-size: 0.88rem; color: var(--gray-l); line-height: 1.55; text-decoration: none; }
+    .info-body a:hover { color: var(--gold); }
+
+    .hours-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .hours-table td { font-size: 0.82rem; padding: 5px 0; color: var(--gray-l); }
+    .hours-table td:last-child { text-align: right; }
+    .hours-table tr.today td { color: var(--gold); font-weight: 700; }
+
+    .social-row { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+    .social-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 10px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(212,160,23,0.15);
+      color: var(--gray-l); text-decoration: none; font-size: 0.8rem; font-weight: 600;
+      transition: background 0.2s, border-color 0.2s, color 0.15s;
+    }
+    .social-btn:hover { background: rgba(212,160,23,0.08); border-color: var(--gold); color: var(--gold); }
+
+    /* Form */
+    .contact-form {
+      background: var(--dark2);
+      border: 1px solid rgba(212,160,23,0.12);
+      border-radius: 20px;
+      padding: 36px;
+    }
+    .contact-form h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
+    .contact-form h3 em { font-style: normal; color: var(--gold); }
+    .contact-form > p { color: var(--gray); font-size: 0.84rem; margin-bottom: 28px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { margin-bottom: 20px; }
+    .field label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--gold); letter-spacing: 0.5px; margin-bottom: 7px; text-transform: uppercase; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 12px 16px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(212,160,23,0.2);
+      border-radius: 10px; color: var(--white); font-size: 0.88rem;
+      font-family: inherit; outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--gold); background: rgba(212,160,23,0.05);
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--gray); }
+    .field select option { background: var(--dark2); }
+    .field textarea { resize: vertical; min-height: 120px; }
+    .submit-btn {
+      width: 100%; padding: 14px; background: var(--gold); color: var(--dark);
+      font-weight: 800; font-size: 1rem; border: none; border-radius: 12px;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
+      font-family: inherit; letter-spacing: 0.3px;
+    }
+    .submit-btn:hover { background: var(--gold-l); transform: translateY(-1px); }
+    .form-note { text-align: center; margin-top: 12px; color: var(--gray); font-size: 0.78rem; }
+
+    /* Map placeholder */
+    .map-section { padding: 0 48px 72px; max-width: 1100px; margin: 0 auto; }
+    .map-placeholder {
+      background: var(--dark2); border: 1px solid rgba(212,160,23,0.12);
+      border-radius: 16px; height: 280px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: var(--gray); font-size: 0.9rem;
+    }
+    .map-placeholder .map-icon { font-size: 3rem; }
+    .map-placeholder h3 { color: var(--white); font-size: 1rem; font-weight: 700; }
+    .map-placeholder a { color: var(--gold); text-decoration: none; font-size: 0.82rem; }
+
+    /* FAQ */
+    .faq-section { padding: 72px 48px; background: var(--dark2); }
+    .faq-section .section-header { text-align: center; margin-bottom: 40px; }
+    .faq-section .section-header h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; }
+    .faq-section .section-header h2 em { font-style: normal; color: var(--gold); }
+    .faq-section .section-header p { color: var(--gray); font-size: 0.9rem; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
+    .faq-item {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(212,160,23,0.1);
+      border-radius: 14px; padding: 22px 20px;
+    }
+    .faq-item h4 { font-size: 0.9rem; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
+    .faq-item p { font-size: 0.83rem; color: var(--gray); line-height: 1.6; }
+
+    /* Footer */
+    footer { background: #06110a; border-top: 1px solid rgba(212,160,23,0.15); }
+    .footer-top {
+      padding: 56px 48px; display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-brand .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand img { height: 36px; border-radius: 7px; }
+    .footer-brand strong { color: var(--gold); font-size: 0.92rem; }
+    .footer-brand p { color: var(--gray); font-size: 0.81rem; line-height: 1.6; max-width: 230px; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 8px; }
+    .footer-social a {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(212,160,23,0.15);
+      display: flex; align-items: center; justify-content: center; font-size: 0.95rem; text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .footer-social a:hover { background: rgba(212,160,23,0.1); border-color: var(--gold); }
+    .footer-col h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 9px; }
+    .footer-col a { color: var(--gray); text-decoration: none; font-size: 0.82rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-app { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+    .footer-app-btn {
+      display: flex; align-items: center; gap: 9px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(212,160,23,0.2);
+      border-radius: 9px; padding: 9px 13px; color: var(--white); text-decoration: none;
+      font-size: 0.8rem; font-weight: 700; transition: background 0.2s, border-color 0.2s;
+    }
+    .footer-app-btn:hover { background: rgba(212,160,23,0.08); border-color: var(--gold); }
+    .footer-app-btn .fi { font-size: 1.3rem; }
+    .footer-app-btn small { display: block; font-weight: 400; font-size: 0.63rem; color: var(--gray); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06); padding: 16px 48px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-bottom p { color: var(--gray); font-size: 0.77rem; }
+    .footer-bottom-links { display: flex; gap: 18px; }
+    .footer-bottom-links a { color: var(--gray); text-decoration: none; font-size: 0.77rem; transition: color 0.15s; }
+    .footer-bottom-links a:hover { color: var(--gold); }
+    .gold-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.15; }
+
+    @media (max-width: 900px) {
+      .contact-wrap { grid-template-columns: 1fr; gap: 36px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .page-hero, .contact-wrap, .map-section, .faq-section { padding-left: 20px; padding-right: 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; padding: 32px 20px; }
+      .footer-bottom { padding: 14px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">🚚 Free delivery on your first order · <a href="shop.html">Browse all categories</a></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="CFM-LOGO.png" alt="CFM" />
+      <div class="nav-brand">Cleveland African Mart <span>Authentic African Groceries</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="category-west-african.html">🌍 West African</a>
+          <a href="category-somali.html">🇸🇴 Somali &amp; East African</a>
+          <a href="category-mexican.html">🌮 Mexican &amp; Latino</a>
+          <a href="category-caribbean.html">🏝️ Caribbean</a>
+          <div class="divider"></div>
+          <a href="category-spices.html">🌶️ Spices &amp; Pantry</a>
+          <a href="category-produce.html">🌿 Fresh Produce</a>
+          <a href="category-beverages.html">🥤 Beverages</a>
+          <a href="category-snacks.html">🍫 Snacks</a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a href="index.html#download" class="nav-cta">Download App</a>
+    <label class="hamburger" for="nav-toggle"><span></span><span></span><span></span></label>
+  </nav>
+
+  <input type="checkbox" id="nav-toggle" />
+  <div class="nav-mobile">
+    <a href="index.html">🏠 Home</a>
+    <div class="section-label">Shop by Category</div>
+    <a href="category-west-african.html">🌍 West African</a>
+    <a href="category-somali.html">🇸🇴 Somali &amp; East African</a>
+    <a href="category-mexican.html">🌮 Mexican &amp; Latino</a>
+    <a href="category-caribbean.html">🏝️ Caribbean</a>
+    <a href="category-spices.html">🌶️ Spices &amp; Pantry</a>
+    <a href="category-produce.html">🌿 Fresh Produce</a>
+    <div class="section-label">Pages</div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html#download">📱 Download App</a>
+  </div>
+
+  <div class="page-hero">
+    <h1>Get in <em>Touch</em></h1>
+    <p>Questions about an order, a product, or just want to say hi? We're here for you — reach out any time.</p>
+  </div>
+
+  <!-- Contact content -->
+  <div class="contact-wrap">
+
+    <!-- Left: info -->
+    <div class="contact-info">
+      <h2>We'd Love to <em>Hear from You</em></h2>
+      <p>Whether it's an order issue, a product question, a wholesale inquiry, or feedback — our team is ready to help. We typically respond within 2 hours during business hours.</p>
+
+      <div class="info-block">
+        <div class="info-icon">📍</div>
+        <div class="info-body">
+          <h4>Location</h4>
+          <p>Cleveland, Ohio<br/>Greater Cleveland Area — Delivery Available Citywide</p>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-icon">📞</div>
+        <div class="info-body">
+          <h4>Phone / WhatsApp</h4>
+          <a href="tel:+12165550000">(216) 555-0000</a><br/>
+          <a href="https://wa.me/12165550000">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-icon">📧</div>
+        <div class="info-body">
+          <h4>Email</h4>
+          <a href="mailto:hello@clevelandafricanmart.com">hello@clevelandafricanmart.com</a><br/>
+          <a href="mailto:orders@clevelandafricanmart.com">orders@clevelandafricanmart.com</a>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-icon">🕐</div>
+        <div class="info-body">
+          <h4>Business Hours</h4>
+          <table class="hours-table">
+            <tr><td>Monday – Friday</td><td>9:00 AM – 8:00 PM</td></tr>
+            <tr class="today"><td>Saturday</td><td>8:00 AM – 9:00 PM</td></tr>
+            <tr><td>Sunday</td><td>10:00 AM – 6:00 PM</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-icon">📱</div>
+        <div class="info-body">
+          <h4>Follow Us</h4>
+          <div class="social-row">
+            <a href="https://www.facebook.com/clevelandafricanmart" target="_blank" class="social-btn">📘 Facebook</a>
+            <a href="#" class="social-btn">📸 Instagram</a>
+            <a href="#" class="social-btn">🎵 TikTok</a>
+            <a href="#" class="social-btn">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: form -->
+    <div class="contact-form">
+      <h3>Send Us a <em>Message</em></h3>
+      <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+      <form>
+        <div class="form-row">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" placeholder="Your first name" />
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" placeholder="Your last name" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com" />
+        </div>
+
+        <div class="field">
+          <label>Phone (optional)</label>
+          <input type="tel" placeholder="(216) 555-0000" />
+        </div>
+
+        <div class="field">
+          <label>Subject</label>
+          <select>
+            <option value="">Select a topic...</option>
+            <option>Order Issue / Question</option>
+            <option>Product Availability</option>
+            <option>Delivery Question</option>
+            <option>Wholesale / Bulk Order</option>
+            <option>Become a Seller / Partner</option>
+            <option>App Feedback</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Message</label>
+          <textarea placeholder="Tell us how we can help you..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message →</button>
+        <p class="form-note">We respond within 2 hours during business hours. For urgent order issues, call or WhatsApp us directly.</p>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Map -->
+  <div class="map-section">
+    <div class="map-placeholder">
+      <span class="map-icon">📍</span>
+      <h3>Cleveland, Ohio</h3>
+      <p>We deliver across the greater Cleveland area</p>
+      <a href="https://maps.google.com/?q=Cleveland,Ohio" target="_blank">Open in Google Maps →</a>
+    </div>
+  </div>
+
+  <div class="gold-divider"></div>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2>Frequently Asked <em>Questions</em></h2>
+      <p>Quick answers to the questions we hear most often.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>How fast is delivery?</h4>
+        <p>We deliver in under 30 minutes on average across the greater Cleveland area. Same-day delivery is available 7 days a week during business hours.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is my first delivery really free?</h4>
+        <p>Yes! Your first order gets free delivery with no minimum order size and no promo code needed. Just download the app, place your order, and enjoy.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you carry halal products?</h4>
+        <p>Absolutely. We carry a wide selection of halal-certified products — clearly labeled in the app. We work with halal suppliers for our meat and prepared goods.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I place a wholesale or bulk order?</h4>
+        <p>Yes! We work with restaurants, catering services, and community organizations. Email us at orders@clevelandafricanmart.com or fill out the contact form above.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Which areas do you deliver to?</h4>
+        <p>We currently deliver to Cleveland, Cleveland Heights, Shaker Heights, Euclid, Parma, Lakewood, Garfield Heights, and surrounding areas. Check the app for your exact zip code.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How can I become a seller or supplier?</h4>
+        <p>We're always looking for authentic African and international food suppliers. Reach out via the contact form, selecting "Become a Seller / Partner" as the subject.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-row"><img src="CFM-LOGO.png" alt="CFM" /><strong>Cleveland African Mart</strong></div>
+        <p>Bringing authentic African, Somali, and international groceries to Cleveland families since 2022.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/clevelandafricanmart" target="_blank">📘</a>
+          <a href="#">📸</a><a href="#">🎵</a><a href="#">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="category-west-african.html">West African</a></li>
+          <li><a href="category-somali.html">Somali &amp; East African</a></li>
+          <li><a href="category-mexican.html">Mexican &amp; Latino</a></li>
+          <li><a href="category-caribbean.html">Caribbean</a></li>
+          <li><a href="category-spices.html">Spices &amp; Pantry</a></li>
+          <li><a href="category-produce.html">Fresh Produce</a></li>
+          <li><a href="category-beverages.html">Beverages</a></li>
+          <li><a href="category-snacks.html">Snacks &amp; Confections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Become a Seller</a></li>
+          <li><a href="#">Blog &amp; Recipes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center / FAQ</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Returns &amp; Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <br /><h4>Get the App</h4>
+        <div class="footer-app">
+          <a href="#" class="footer-app-btn"><span class="fi">🍎</span><span><small>Download on the</small>App Store</span></a>
+          <a href="#" class="footer-app-btn"><span class="fi">▶</span><span><small>Get it on</small>Google Play</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cleveland African Mart LLC · Cleveland, Ohio · All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

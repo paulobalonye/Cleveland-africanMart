@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snacks &amp; Confections – Cleveland African Mart</title>
+<meta name="description" content="Shop authentic African snacks in Cleveland Ohio. Chin chin, plantain chips, kulikuli, coconut candy and more delivered in 30 minutes.">
+<meta property="og:title" content="African Snacks & Sweet Treats – Cleveland African Mart">
+<meta property="og:description" content="Shop authentic African snacks in Cleveland Ohio. Chin chin, plantain chips, kulikuli, coconut candy and more delivered in 30 minutes.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--dark:#0a1a0f;--dark2:#122018;--dark3:#0d2115;--gold:#d4a017;--gold-l:#f0c040;--white:#ffffff;--gray:#9aab9e;--gray-l:#c5d4c9;--accent:#bb55ff;--accent-dim:rgba(187,85,255,0.12);}
+html{scroll-behavior:smooth;}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--white);}
+.top-bar{background:var(--gold);text-align:center;padding:8px 20px;font-size:.78rem;font-weight:700;color:var(--dark);}.top-bar a{color:var(--dark);text-decoration:underline;}
+nav{background:rgba(10,26,15,.98);backdrop-filter:blur(12px);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(212,160,23,.15);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}.nav-logo img{height:40px;border-radius:8px;}.nav-brand{color:var(--gold);font-size:.95rem;font-weight:800;line-height:1.2;}.nav-brand span{display:block;color:var(--gray);font-size:.65rem;font-weight:400;}
+.nav-links{display:flex;align-items:center;gap:4px;}.nav-links a{color:var(--gray-l);text-decoration:none;font-size:.88rem;font-weight:500;padding:8px 14px;border-radius:8px;transition:color .15s,background .15s;white-space:nowrap;}.nav-links a:hover{color:var(--gold);background:rgba(212,160,23,.07);}
+.nav-cta{background:var(--gold);color:var(--dark);font-weight:800;padding:10px 22px;border-radius:24px;text-decoration:none;font-size:.85rem;margin-left:8px;transition:background .2s,transform .15s;white-space:nowrap;}.nav-cta:hover{background:var(--gold-l);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:2px;}#nav-toggle{display:none;}.nav-mobile{display:none;}
+@media(max-width:768px){nav{padding:0 20px;height:60px;}.nav-links{display:none;}.hamburger{display:flex;}#nav-toggle:checked~.nav-mobile{display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:var(--dark2);border-bottom:1px solid rgba(212,160,23,.15);padding:16px 20px;gap:4px;z-index:199;max-height:calc(100vh - 60px);overflow-y:auto;}.nav-mobile a{color:var(--gray-l);text-decoration:none;font-size:.92rem;padding:10px 14px;border-radius:8px;display:block;}.nav-mobile .section-label{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);padding:12px 14px 4px;font-weight:700;}}
+.cat-hero{padding:64px 48px 52px;position:relative;overflow:hidden;background:linear-gradient(145deg,#1a0a2a 0%,#0d0514 100%);border-bottom:1px solid rgba(187,85,255,.18);}.cat-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(187,85,255,.03) 0,rgba(187,85,255,.03) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,rgba(187,85,255,.03) 0,rgba(187,85,255,.03) 1px,transparent 0,transparent 50%);background-size:24px 24px;pointer-events:none;}
+.cat-hero-inner{position:relative;max-width:1100px;margin:0 auto;}.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:18px;font-size:.78rem;color:var(--gray);}.breadcrumb a{color:var(--gray);text-decoration:none;}.breadcrumb a:hover{color:var(--gold);}.breadcrumb span{color:rgba(255,255,255,.2);}
+.cat-tag{display:inline-block;background:var(--accent-dim);color:var(--accent);font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:12px;margin-bottom:14px;}
+.cat-hero h1{font-size:clamp(2rem,4.5vw,3rem);font-weight:900;line-height:1.1;margin-bottom:12px;letter-spacing:-.5px;}.cat-hero h1 em{font-style:normal;color:var(--accent);}
+.cat-hero p{color:var(--gray);font-size:.98rem;line-height:1.65;max-width:500px;margin-bottom:24px;}
+.cat-meta{display:flex;gap:24px;flex-wrap:wrap;}.cat-meta-item{display:flex;align-items:center;gap:8px;}.cat-meta-item .icon{font-size:1.1rem;}.cat-meta-item span{font-size:.82rem;color:var(--gray-l);}.cat-meta-item strong{color:var(--white);}
+.cat-hero-emoji{font-size:7rem;opacity:.1;position:absolute;right:48px;top:50%;transform:translateY(-50%);pointer-events:none;user-select:none;}
+.dl-alert{background:linear-gradient(90deg,rgba(212,160,23,.12),rgba(212,160,23,.06));border:1px solid rgba(212,160,23,.25);border-left:4px solid var(--gold);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}.dl-alert p{font-size:.88rem;color:var(--gray-l);}.dl-alert strong{color:var(--white);}
+.dl-btns{display:flex;gap:10px;flex-shrink:0;}.dl-btn{display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:10px;text-decoration:none;font-size:.82rem;font-weight:700;transition:transform .15s,opacity .15s;}.dl-btn:hover{transform:translateY(-1px);opacity:.9;}.dl-btn.ios{background:var(--gold);color:var(--dark);}.dl-btn.android{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--white);}
+.products-area{padding:52px 48px;max-width:1200px;margin:0 auto;}
+.section-label{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:6px;}.section-title{font-size:1.4rem;font-weight:800;margin-bottom:28px;}.section-title em{font-style:normal;color:var(--gold);}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:48px;}
+.product-card{display:block;text-decoration:none;background:var(--dark2);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s;}.product-card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 16px 40px rgba(0,0,0,.35);}
+.product-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:rgba(255,255,255,.025);position:relative;}
+.product-badge{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:10px;}.badge-hot{background:rgba(255,80,0,.2);color:#ff9966;}.badge-new{background:rgba(42,180,90,.2);color:#6eda97;}.badge-fresh{background:rgba(0,200,100,.2);color:#44ddaa;}
+.product-body{padding:14px 14px 16px;}.product-origin{font-size:.64rem;color:var(--gray);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;font-weight:600;}.product-body h4{font-size:.88rem;font-weight:700;color:var(--white);line-height:1.35;margin-bottom:4px;}.product-desc{font-size:.75rem;color:var(--gray);line-height:1.4;margin-bottom:12px;}
+.product-footer{display:flex;align-items:center;justify-content:space-between;gap:6px;}.product-price{font-size:1rem;font-weight:900;color:var(--gold);}
+.order-btn{display:flex;align-items:center;gap:5px;background:var(--accent-dim);border:1px solid rgba(200,200,200,.2);color:var(--accent);border-radius:8px;padding:6px 12px;font-size:.76rem;font-weight:700;white-space:nowrap;transition:background .15s,color .15s,border-color .15s;}.product-card:hover .order-btn{background:var(--accent);color:var(--dark);border-color:var(--accent);}
+.cta-section{background:linear-gradient(145deg,#1a0a2a 0%,#0d0514 100%);border-top:1px solid rgba(187,85,255,.18);border-bottom:1px solid rgba(187,85,255,.18);padding:72px 48px;text-align:center;}.cta-section h2{font-size:2rem;font-weight:900;margin-bottom:10px;}.cta-section h2 em{font-style:normal;color:var(--gold);}.cta-section p{color:var(--gray);max-width:440px;margin:0 auto 32px;line-height:1.6;}
+.app-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}.app-btn{display:flex;align-items:center;gap:12px;padding:14px 24px;border-radius:14px;text-decoration:none;font-weight:700;font-size:.95rem;transition:transform .15s,opacity .15s;}.app-btn:hover{transform:translateY(-2px);opacity:.9;}.app-btn .si{font-size:1.8rem;}.app-btn .sl{display:flex;flex-direction:column;line-height:1.2;text-align:left;}.app-btn .sl small{font-weight:400;font-size:.68rem;}.app-btn.ios{background:var(--gold);color:var(--dark);}.app-btn.ios small{color:rgba(10,26,15,.65);}.app-btn.android{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:var(--white);}.app-btn.android small{color:var(--gray);}
+footer{background:#06110a;border-top:1px solid rgba(212,160,23,.12);padding:24px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}footer p{color:var(--gray);font-size:.78rem;}.footer-links{display:flex;gap:20px;}.footer-links a{color:var(--gray);text-decoration:none;font-size:.78rem;transition:color .15s;}.footer-links a:hover{color:var(--gold);}
+@media(max-width:640px){.cat-hero{padding:48px 20px 40px;}.cat-hero-emoji{display:none;}.dl-alert{padding:14px 20px;}.products-area{padding:40px 20px;}.product-grid{grid-template-columns:repeat(2,1fr);}.cta-section{padding:56px 20px;}footer{padding:18px 20px;flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  Same-day delivery in Cleveland, OH &nbsp;·&nbsp; <a href="index.html#download">Download the app</a> to order now
+</div>
+
+<nav>
+  <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </label>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-brand">Cleveland African Mart<span>African &amp; Caribbean Grocery</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html#download" class="nav-cta">Download App</a>
+  </div>
+  <input type="checkbox" id="nav-toggle">
+  <nav class="nav-mobile">
+    <div class="section-label">Navigation</div>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html#download">Download App</a>
+  </nav>
+</nav>
+
+<section class="cat-hero">
+  <div class="cat-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="shop.html">Shop</a>
+      <span>›</span>
+      <span style="color:var(--accent);">Snacks &amp; Confections</span>
+    </nav>
+    <div class="cat-tag">🍫 Snacks &amp; Confections</div>
+    <h1>African Snacks<br>&amp; <em>Sweet Treats</em></h1>
+    <p>Shop authentic African snacks in Cleveland Ohio. Chin chin, plantain chips, kulikuli, coconut candy and more delivered in 30 minutes.</p>
+    <div class="cat-meta">
+      <div class="cat-meta-item">
+        <span class="icon">🛒</span>
+        <span><strong>45+</strong> products</span>
+      </div>
+      <div class="cat-meta-item">
+        <span class="icon">🚚</span>
+        <span><strong>Delivered</strong> in 30 min</span>
+      </div>
+      <div class="cat-meta-item">
+        <span class="icon">🌍</span>
+        <span><strong>Nigeria · Ghana · West Africa</strong></span>
+      </div>
+    </div>
+  </div>
+  <div class="cat-hero-emoji" aria-hidden="true">🍫</div>
+</section>
+
+<div class="dl-alert">
+  <p><strong>Order via the app</strong> — 30-minute delivery across Greater Cleveland. Browse, add to cart, and track in real time.</p>
+  <div class="dl-btns">
+    <a href="index.html#download" class="dl-btn ios">🍎 App Store</a>
+    <a href="index.html#download" class="dl-btn android">▶ Google Play</a>
+  </div>
+</div>
+
+<div class="products-area">
+
+  <!-- Section 1: Savoury Snacks -->
+  <div class="section-label">Savoury Snacks</div>
+  <div class="section-title">African <em>Savoury Snacks</em></div>
+
+  <div class="product-grid">
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍩
+        <span class="product-badge badge-hot">Hot</span>
+      </div>
+      <div class="product-body">
+        <div class="product-origin">Nigeria / Ghana</div>
+        <h4>Chin Chin (Honey &amp; Spice)</h4>
+        <p class="product-desc">Crispy fried dough — Nigeria's favourite snack</p>
+        <div class="product-footer">
+          <span class="product-price">$5.99</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍌
+        <span class="product-badge badge-hot">Hot</span>
+      </div>
+      <div class="product-body">
+        <div class="product-origin">West Africa</div>
+        <h4>Plantain Chips (Spiced)</h4>
+        <p class="product-desc">Thinly sliced, perfectly seasoned plantain crisps</p>
+        <div class="product-footer">
+          <span class="product-price">$4.50</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🥜
+      </div>
+      <div class="product-body">
+        <div class="product-origin">Nigeria</div>
+        <h4>Kulikuli Groundnut Cake</h4>
+        <p class="product-desc">Crunchy fried peanut cake from North Nigeria</p>
+        <div class="product-footer">
+          <span class="product-price">$4.99</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍘
+        <span class="product-badge badge-new">New</span>
+      </div>
+      <div class="product-body">
+        <div class="product-origin">Nigeria</div>
+        <h4>Kokoro Corn Snack</h4>
+        <p class="product-desc">Sweet crunchy spiral corn crisps</p>
+        <div class="product-footer">
+          <span class="product-price">$3.99</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🥜
+        <span class="product-badge badge-hot">Hot</span>
+      </div>
+      <div class="product-body">
+        <div class="product-origin">Nigeria</div>
+        <h4>Roasted Suya Peanuts</h4>
+        <p class="product-desc">Spiced peanuts with suya seasoning</p>
+        <div class="product-footer">
+          <span class="product-price">$4.50</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍿
+      </div>
+      <div class="product-body">
+        <div class="product-origin">West Africa</div>
+        <h4>Popcorn (African Spiced)</h4>
+        <p class="product-desc">Popcorn with West African spice rub</p>
+        <div class="product-footer">
+          <span class="product-price">$3.50</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🌽
+        <span class="product-badge badge-new">New</span>
+      </div>
+      <div class="product-body">
+        <div class="product-origin">Nigeria</div>
+        <h4>Ojojo Yam Crisps</h4>
+        <p class="product-desc">Grated yam fritters, crispy and golden</p>
+        <div class="product-footer">
+          <span class="product-price">$4.99</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🥜
+      </div>
+      <div class="product-body">
+        <div class="product-origin">West Africa</div>
+        <h4>Groundnut (Roasted, Salted)</h4>
+        <p class="product-desc">Classic salted roasted peanuts</p>
+        <div class="product-footer">
+          <span class="product-price">$3.99</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Section 2: Sweet Treats -->
+  <div class="section-label">Sweet Treats</div>
+  <div class="section-title">African <em>Sweets &amp; Candy</em></div>
+
+  <div class="product-grid">
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🥥
+        <span class="product-badge badge-hot">Hot</span>
+      </div>
+      <div class="product-body">
+        <div class="product-origin">West Africa</div>
+        <h4>Coconut Candy (Tablet)</h4>
+        <p class="product-desc">Traditional sweetened coconut slab</p>
+        <div class="product-footer">
+          <span class="product-price">$3.50</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍬
+      </div>
+      <div class="product-body">
+        <div class="product-origin">Nigeria</div>
+        <h4>Tom Tom Candy Assorted</h4>
+        <p class="product-desc">Nigeria's iconic candy in 4 flavours</p>
+        <div class="product-footer">
+          <span class="product-price">$2.99</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍪
+      </div>
+      <div class="product-body">
+        <div class="product-origin">West Africa</div>
+        <h4>Coconut Biscuits (Pack)</h4>
+        <p class="product-desc">Buttery coconut-flavoured biscuits</p>
+        <div class="product-footer">
+          <span class="product-price">$4.50</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍫
+        <span class="product-badge badge-new">New</span>
+      </div>
+      <div class="product-body">
+        <div class="product-origin">Nigeria</div>
+        <h4>Nasco Wafer Rolls</h4>
+        <p class="product-desc">Light crispy wafer rolls, 4 flavours</p>
+        <div class="product-footer">
+          <span class="product-price">$3.99</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍬
+      </div>
+      <div class="product-body">
+        <div class="product-origin">Ghana</div>
+        <h4>Gbagba (Puffed Corn Candy)</h4>
+        <p class="product-desc">Sweet puffed corn snack from Ghana</p>
+        <div class="product-footer">
+          <span class="product-price">$3.50</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="index.html#download" class="product-card">
+      <div class="product-img">
+        🍪
+      </div>
+      <div class="product-body">
+        <div class="product-origin">West Africa</div>
+        <h4>Digestive Biscuits (African Pack)</h4>
+        <p class="product-desc">Wholesome oat digestive biscuits</p>
+        <div class="product-footer">
+          <span class="product-price">$4.99</span>
+          <span class="order-btn">Order in App →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+<section class="cta-section" id="download">
+  <h2>Snack on Something<br><em>Authentically African</em></h2>
+  <p>Download the Cleveland African Mart app to browse our full snacks selection and get delivery in 30 minutes across Cleveland.</p>
+  <div class="app-buttons">
+    <a href="index.html#download" class="app-btn ios">
+      <span class="si">🍎</span>
+      <span class="sl"><small>Download on the</small>App Store</span>
+    </a>
+    <a href="index.html#download" class="app-btn android">
+      <span class="si">▶</span>
+      <span class="sl"><small>Get it on</small>Google Play</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Cleveland African Mart LLC · Cleveland, Ohio</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html#download">Download App</a>
+  </div>
+</footer>
+
+</body>
+</html>

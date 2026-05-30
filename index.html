@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleveland African Mart – African Groceries Delivered in Cleveland, Ohio</title>
+  <meta name="description" content="Shop authentic African, Somali, and international groceries in Cleveland, Ohio. Nigerian, Ghanaian, Somali, Mexican & Caribbean products delivered in 30 minutes. Download the CFM app." />
+  <meta name="keywords" content="African grocery Cleveland, African food delivery Cleveland Ohio, Nigerian groceries Cleveland, Somali grocery Cleveland, West African food Cleveland, fufu egusi palm oil Cleveland" />
+  <link rel="canonical" href="https://clevelandafricanmart.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clevelandafricanmart.com/" />
+  <meta property="og:title" content="Cleveland African Mart – African Groceries Delivered in Cleveland" />
+  <meta property="og:description" content="Authentic African, Somali, and international groceries delivered in under 30 minutes across Cleveland, Ohio. 500+ products." />
+  <meta property="og:image" content="https://clevelandafricanmart.com/CFM-LOGO.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"GroceryStore","name":"Cleveland African Mart","description":"Authentic African groceries delivered in Cleveland, Ohio","url":"https://clevelandafricanmart.com","telephone":"+1-216-555-0000","address":{"@type":"PostalAddress","addressLocality":"Cleveland","addressRegion":"OH","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"18:00"}],"sameAs":["https://www.facebook.com/clevelandafricanmart"]}</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:   #1a5c38;
+      --green-m: #2a7a4a;
+      --green-l: #e8f5ee;
+      --green-xl:#f2faf5;
+      --gold:    #d4a017;
+      --gold-l:  #f0c040;
+      --white:   #ffffff;
+      --text:    #111c14;
+      --text-m:  #3a5040;
+      --gray:    #6b8070;
+      --gray-l:  #a0b8a8;
+      --border:  #d8e8dd;
+      --shadow:  rgba(26,92,56,0.09);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--white); color: var(--text); }
+
+    /* ── TOP BAR ── */
+    .top-bar { background: var(--green); text-align: center; padding: 9px 20px; font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .top-bar a { color: var(--gold-l); text-decoration: none; }
+    .top-bar a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      padding: 0 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; position: sticky; top: 0; z-index: 200;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 40px; border-radius: 8px; }
+    .nav-brand { color: var(--green); font-size: 0.95rem; font-weight: 800; line-height: 1.2; }
+    .nav-brand span { display: block; color: var(--gray); font-size: 0.65rem; font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-links > a {
+      color: var(--text-m); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px; transition: color 0.15s, background 0.15s;
+    }
+    .nav-links > a:hover { color: var(--green); background: var(--green-l); }
+    .nav-links > a.active { color: var(--green); font-weight: 700; }
+
+    /* JS-powered dropdown — no gap issue */
+    .dropdown { position: relative; }
+    .dropdown-trigger {
+      color: var(--text-m); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px; transition: color 0.15s, background 0.15s;
+      display: flex; align-items: center; gap: 4px; cursor: pointer;
+      background: none; border: none; font-family: inherit;
+    }
+    .dropdown-trigger::after { content: '▾'; font-size: 0.7rem; color: var(--gray-l); transition: transform 0.2s; }
+    .dropdown-trigger:hover, .dropdown.open .dropdown-trigger { color: var(--green); background: var(--green-l); }
+    .dropdown.open .dropdown-trigger::after { transform: rotate(-180deg); }
+    .dropdown-menu {
+      display: none;
+      position: absolute; top: 100%; left: 0;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 8px; min-width: 230px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      z-index: 300;
+    }
+    .dropdown.open .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      color: var(--text-m); text-decoration: none; font-size: 0.85rem; border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .dropdown-menu a:hover { color: var(--green); background: var(--green-l); }
+    .dropdown-menu .divider { height: 1px; background: var(--border); margin: 4px 0; }
+
+    .nav-cta {
+      background: var(--green); color: var(--white); font-weight: 800;
+      padding: 10px 22px; border-radius: 24px; text-decoration: none; font-size: 0.85rem;
+      margin-left: 10px; transition: background 0.2s, transform 0.15s; white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(26,92,56,0.22);
+    }
+    .nav-cta:hover { background: var(--green-m); transform: translateY(-1px); }
+
+    /* Mobile */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--green); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+    .nav-mobile { display: none; }
+    .nav-mobile.open {
+      display: flex; flex-direction: column; position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 16px 20px; gap: 4px; z-index: 199;
+      max-height: calc(100vh - 60px); overflow-y: auto;
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+    .nav-mobile a { color: var(--text-m); text-decoration: none; font-size: 0.92rem; padding: 10px 14px; border-radius: 8px; display: block; }
+    .nav-mobile a:hover { color: var(--green); background: var(--green-l); }
+    .nav-mobile .mob-label { font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-l); padding: 12px 14px 4px; font-weight: 700; }
+    @media (max-width: 768px) { nav { padding: 0 20px; height: 60px; } .nav-links, .dropdown { display: none; } .hamburger { display: flex; } .nav-cta { display: none; } }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+    @media (prefers-reduced-motion: no-preference) {
+      .a1 { animation: fadeUp 0.65s ease both; }
+      .a2 { animation: fadeUp 0.65s 0.1s ease both; }
+      .a3 { animation: fadeUp 0.65s 0.2s ease both; }
+      .a4 { animation: fadeUp 0.65s 0.32s ease both; }
+    }
+
+    /* ────────────────────────────────────────────
+       HERO CAROUSEL
+    ──────────────────────────────────────────── */
+    .carousel { position: relative; overflow: hidden; width: 100%; height: 520px; }
+    @media (max-width: 768px) { .carousel { height: 420px; } }
+    @media (max-width: 480px) { .carousel { height: 360px; } }
+
+    .carousel-track { display: flex; height: 100%; transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94); will-change: transform; }
+
+    .slide {
+      flex: 0 0 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    /* Slide backgrounds */
+    .slide-1 { background: linear-gradient(135deg, #0f3320 0%, #1a5c38 40%, #2a7a4a 100%); }
+    .slide-2 { background: linear-gradient(135deg, #2d1500 0%, #7a3a00 50%, #c8860a 100%); }
+    .slide-3 { background: linear-gradient(135deg, #001a2d 0%, #003366 50%, #0055aa 100%); }
+    .slide-4 { background: linear-gradient(135deg, #2a0e0e 0%, #7a2020 50%, #c03030 100%); }
+
+    /* Floating bg emoji watermarks */
+    .slide-bg {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: flex-end;
+      padding-right: 48px;
+      pointer-events: none;
+    }
+    .slide-bg-emojis {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      opacity: 0.12; font-size: 4.5rem; transform: rotate(8deg);
+    }
+    @media (max-width: 640px) { .slide-bg { display: none; } }
+
+    /* Slide content */
+    .slide-content {
+      position: relative; z-index: 1;
+      padding: 0 64px; max-width: 1100px; width: 100%;
+      margin: 0 auto;
+    }
+    @media (max-width: 640px) { .slide-content { padding: 0 24px; } }
+    .slide-label {
+      display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
+      background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9);
+      margin-bottom: 16px; backdrop-filter: blur(4px);
+    }
+    .slide-content h2 {
+      font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+      font-weight: 900; color: var(--white); line-height: 1.1;
+      margin-bottom: 14px; letter-spacing: -0.5px;
+    }
+    .slide-content h2 span { color: var(--gold-l); }
+    .slide-content p { color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.6; max-width: 500px; margin-bottom: 28px; }
+    .slide-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .slide-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: 12px; text-decoration: none;
+      font-weight: 700; font-size: 0.9rem; transition: transform 0.15s, opacity 0.15s;
+    }
+    .slide-btn:hover { transform: translateY(-2px); opacity: 0.92; }
+    .slide-btn.primary { background: var(--white); color: var(--green); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+    .slide-btn.secondary { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35); color: var(--white); backdrop-filter: blur(4px); }
+
+    /* Carousel controls */
+    .carousel-prev, .carousel-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white); font-size: 1.1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 10; transition: background 0.2s, transform 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .carousel-prev:hover, .carousel-next:hover { background: rgba(255,255,255,0.28); transform: translateY(-50%) scale(1.08); }
+    .carousel-prev { left: 16px; }
+    .carousel-next { right: 16px; }
+    @media (max-width: 480px) { .carousel-prev { left: 8px; } .carousel-next { right: 8px; } }
+
+    /* Dots */
+    .carousel-dots {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 10;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.4); cursor: pointer;
+      transition: background 0.2s, transform 0.2s; border: none;
+    }
+    .dot.active { background: var(--white); transform: scale(1.3); }
+
+    /* ── STATS ── */
+    .stats-bar { background: var(--green); padding: 24px 48px; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.9rem; font-weight: 900; color: var(--gold-l); line-height: 1; }
+    .stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+    /* ── SHARED SECTION ── */
+    .section { padding: 80px 48px; }
+    .section.tinted { background: var(--green-xl); }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header h2 { font-size: 2rem; font-weight: 900; color: var(--text); margin-bottom: 10px; }
+    .section-header h2 em { font-style: normal; color: var(--green); }
+    .section-header p { color: var(--gray); max-width: 520px; margin: 0 auto; line-height: 1.6; font-size: 0.95rem; }
+    .underline { width: 48px; height: 3px; background: var(--green); border-radius: 2px; margin: 14px auto 0; }
+    .divider { height: 1px; background: var(--border); }
+
+    /* ── HOW IT WORKS ── */
+    .steps { display: flex; gap: 0; max-width: 800px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .step { flex: 1; min-width: 200px; text-align: center; padding: 0 24px; position: relative; }
+    .step:not(:last-child)::after { content: '→'; position: absolute; right: -8px; top: 26px; color: var(--gray-l); font-size: 1.2rem; }
+    .step-num { width: 56px; height: 56px; border-radius: 50%; background: var(--green-l); border: 2px solid rgba(26,92,56,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; color: var(--green); margin: 0 auto 16px; }
+    .step h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .step p { font-size: 0.83rem; color: var(--gray); line-height: 1.55; }
+
+    /* ── CATEGORY TILES ── */
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 1040px; margin: 0 auto; }
+    .cat-tile { border-radius: 16px; padding: 28px 22px; text-decoration: none; display: block; border: 1.5px solid var(--border); background: var(--white); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .cat-tile:hover { transform: translateY(-5px); box-shadow: 0 16px 40px var(--shadow); border-color: var(--green); }
+    .ct-emoji { font-size: 2.6rem; display: block; margin-bottom: 12px; }
+    .cat-tile h3 { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+    .cat-tile .ct-sub { font-size: 0.75rem; color: var(--gray); line-height: 1.4; margin-bottom: 14px; }
+    .ct-count { display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 700; color: var(--green); }
+    .ct-count::after { content: '→'; }
+
+    /* ── FEATURES ── */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 940px; margin: 0 auto; }
+    .feature-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 28px 22px; text-align: center; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+    .feature-card:hover { border-color: var(--green); box-shadow: 0 8px 28px var(--shadow); transform: translateY(-4px); }
+    .feature-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .feature-card h3 { font-size: 0.95rem; color: var(--green); margin-bottom: 8px; font-weight: 700; }
+    .feature-card p { font-size: 0.84rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── TESTIMONIALS ── */
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; max-width: 980px; margin: 0 auto; }
+    .testi-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 26px 22px; box-shadow: 0 4px 16px var(--shadow); }
+    .testi-stars { color: var(--gold); font-size: 0.95rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testi-card blockquote { color: var(--text-m); font-size: 0.9rem; line-height: 1.7; font-style: italic; margin-bottom: 16px; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--green-l); color: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+    .testi-name { color: var(--text); font-weight: 700; font-size: 0.86rem; }
+    .testi-loc  { color: var(--gray); font-size: 0.72rem; }
+
+    /* ── DOWNLOAD CTA ── */
+    .cta-section { background: var(--green); text-align: center; padding: 88px 48px; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 32px); pointer-events: none; }
+    .cta-section h2 { font-size: 2.2rem; font-weight: 900; color: var(--white); margin-bottom: 12px; position: relative; }
+    .cta-section p { color: rgba(255,255,255,0.8); margin: 0 auto 36px; font-size: 1rem; max-width: 440px; position: relative; line-height: 1.6; }
+    .app-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .app-buttons.center { justify-content: center; }
+    .app-btn { display: flex; align-items: center; gap: 12px; padding: 13px 22px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 0.92rem; transition: transform 0.15s, box-shadow 0.15s; }
+    .app-btn:hover { transform: translateY(-2px); }
+    .app-btn .si { font-size: 1.8rem; }
+    .app-btn .sl { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+    .app-btn .sl small { font-weight: 400; font-size: 0.68rem; }
+    .app-btn.ios { background: var(--white); color: var(--green); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .app-btn.ios small { color: var(--gray); }
+    .app-btn.android { background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.3); color: var(--white); }
+    .app-btn.android small { color: rgba(255,255,255,0.65); }
+    .app-btn.dark { background: var(--text); color: var(--white); box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+    .app-btn.dark small { color: rgba(255,255,255,0.6); }
+    .app-btn.outline { background: var(--white); color: var(--text); border: 2px solid var(--border); box-shadow: 0 2px 8px var(--shadow); }
+    .app-btn.outline small { color: var(--gray); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--text); }
+    .footer-top { padding: 56px 48px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+    .footer-brand .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand img { height: 36px; border-radius: 7px; }
+    .footer-brand strong { color: var(--gold-l); font-size: 0.92rem; }
+    .footer-brand p { color: rgba(255,255,255,0.48); font-size: 0.81rem; line-height: 1.6; max-width: 230px; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 8px; }
+    .footer-social a { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; text-decoration: none; transition: background 0.2s; }
+    .footer-social a:hover { background: rgba(255,255,255,0.14); }
+    .footer-col h4 { color: rgba(255,255,255,0.38); font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 9px; }
+    .footer-col a { color: rgba(255,255,255,0.62); text-decoration: none; font-size: 0.82rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-l); }
+    .footer-app { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+    .footer-app-btn { display: flex; align-items: center; gap: 9px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 9px; padding: 9px 13px; color: var(--white); text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: background 0.2s; }
+    .footer-app-btn:hover { background: rgba(255,255,255,0.13); }
+    .footer-app-btn .fi { font-size: 1.3rem; }
+    .footer-app-btn small { display: block; font-weight: 400; font-size: 0.63rem; color: rgba(255,255,255,0.48); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; max-width: 1200px; margin: 0 auto; }
+    .footer-bottom p { color: rgba(255,255,255,0.32); font-size: 0.77rem; }
+    .footer-bottom-links { display: flex; gap: 18px; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.32); text-decoration: none; font-size: 0.77rem; transition: color 0.15s; }
+    .footer-bottom-links a:hover { color: var(--gold-l); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) {
+      .section { padding: 60px 20px; }
+      .stats-bar { padding: 18px 20px; }
+      .cta-section { padding: 64px 20px; }
+      .footer-top { grid-template-columns: 1fr; padding: 40px 20px; }
+      .footer-bottom { padding: 16px 20px; flex-direction: column; align-items: flex-start; }
+      .step::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    🚚 Free delivery on your first order &nbsp;·&nbsp; <a href="shop.html">Browse all categories →</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="CFM-LOGO.png" alt="CFM" />
+      <div class="nav-brand">Cleveland African Mart <span>Authentic African Groceries</span></div>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <div class="dropdown" id="shopDropdown">
+        <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">Shop</button>
+        <div class="dropdown-menu" role="menu">
+          <a href="category-west-african.html">🌍 West African</a>
+          <a href="category-somali.html">🇸🇴 Somali &amp; East African</a>
+          <a href="category-mexican.html">🌮 Mexican &amp; Latino</a>
+          <a href="category-caribbean.html">🏝️ Caribbean</a>
+          <div class="divider"></div>
+          <a href="category-spices.html">🌶️ Spices &amp; Pantry</a>
+          <a href="category-produce.html">🌿 Fresh Produce</a>
+          <a href="category-beverages.html">🥤 Beverages</a>
+          <a href="category-snacks.html">🍫 Snacks</a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <a href="#download" class="nav-cta">Download App</a>
+
+    <button class="hamburger" id="mobileMenuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="nav-mobile" id="mobileNav">
+    <a href="index.html">🏠 Home</a>
+    <div class="mob-label">Shop by Category</div>
+    <a href="category-west-african.html">🌍 West African</a>
+    <a href="category-somali.html">🇸🇴 Somali &amp; East African</a>
+    <a href="category-mexican.html">🌮 Mexican &amp; Latino</a>
+    <a href="category-caribbean.html">🏝️ Caribbean</a>
+    <a href="category-central-african.html">🫙 Central &amp; Southern African</a>
+    <a href="category-spices.html">🌶️ Spices &amp; Pantry</a>
+    <a href="category-produce.html">🌿 Fresh Produce</a>
+    <a href="category-beverages.html">🥤 Beverages</a>
+    <a href="category-snacks.html">🍫 Snacks</a>
+    <div class="mob-label">Pages</div>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="#download">📱 Download App</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO CAROUSEL
+  ═══════════════════════════════════════ -->
+  <div class="carousel" id="carousel" role="region" aria-label="Featured promotions">
+    <div class="carousel-track" id="carouselTrack">
+
+      <!-- Slide 1: West African Kitchen -->
+      <div class="slide slide-1" role="group" aria-label="Slide 1 of 4">
+        <div class="slide-bg">
+          <div class="slide-bg-emojis">
+            <span>🥘</span><span>🌴</span><span>🐟</span>
+            <span>🌶️</span><span>🫙</span><span>🍚</span>
+            <span>🥬</span><span>🌿</span><span>🥜</span>
+          </div>
+        </div>
+        <div class="slide-content">
+          <span class="slide-label">🌍 West African Collection</span>
+          <h2>Authentic Nigerian,<br>Ghanaian &amp; <span>More</span></h2>
+          <p>Fufu, egusi, palm oil, suya spice, stockfish — the full West African kitchen, delivered to your Cleveland door in 30 minutes.</p>
+          <div class="slide-actions">
+            <a href="category-west-african.html" class="slide-btn primary">Shop West African →</a>
+            <a href="#download" class="slide-btn secondary">Download App</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Somali & East African -->
+      <div class="slide slide-3" role="group" aria-label="Slide 2 of 4">
+        <div class="slide-bg">
+          <div class="slide-bg-emojis">
+            <span>🇸🇴</span><span>☕</span><span>🌾</span>
+            <span>🥛</span><span>🌶️</span><span>🍵</span>
+            <span>🧄</span><span>🫙</span><span>🍚</span>
+          </div>
+        </div>
+        <div class="slide-content">
+          <span class="slide-label">🇸🇴 Somali &amp; East African</span>
+          <h2>Somali, Ethiopian<br>&amp; <span>Eritrean Essentials</span></h2>
+          <p>Suugo sauce, xawaash spice, camel milk powder, berbere, teff flour — halal-certified, delivered fresh in Cleveland.</p>
+          <div class="slide-actions">
+            <a href="category-somali.html" class="slide-btn primary">Shop Somali →</a>
+            <a href="#download" class="slide-btn secondary">Download App</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Mexican & Caribbean -->
+      <div class="slide slide-2" role="group" aria-label="Slide 3 of 4">
+        <div class="slide-bg">
+          <div class="slide-bg-emojis">
+            <span>🌮</span><span>🌽</span><span>🌶️</span>
+            <span>🏝️</span><span>🍌</span><span>🧄</span>
+            <span>🫙</span><span>🥥</span><span>🍅</span>
+          </div>
+        </div>
+        <div class="slide-content">
+          <span class="slide-label">🌮 Mexican &amp; Caribbean</span>
+          <h2>Latin &amp; Caribbean<br><span>Flavours</span>, Delivered</h2>
+          <p>Masa harina, dried chiles, achiote, scotch bonnet, jerk seasoning — everything Cleveland's Latino and Caribbean community needs.</p>
+          <div class="slide-actions">
+            <a href="category-mexican.html" class="slide-btn primary">Shop Mexican →</a>
+            <a href="category-caribbean.html" class="slide-btn secondary">Shop Caribbean</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Free Delivery Promo -->
+      <div class="slide slide-4" role="group" aria-label="Slide 4 of 4">
+        <div class="slide-bg">
+          <div class="slide-bg-emojis">
+            <span>📱</span><span>🚚</span><span>⭐</span>
+            <span>🛒</span><span>🎁</span><span>✅</span>
+            <span>⚡</span><span>🌍</span><span>❤️</span>
+          </div>
+        </div>
+        <div class="slide-content">
+          <span class="slide-label">🎁 Limited Offer</span>
+          <h2>Your <span>First Delivery</span><br>is Always Free</h2>
+          <p>Download the Cleveland African Mart app today. 500+ products, 30-minute delivery across Cleveland — no promo code needed.</p>
+          <div class="slide-actions">
+            <a href="#download" class="slide-btn primary">🍎 Download for iOS</a>
+            <a href="#download" class="slide-btn secondary">▶ Download for Android</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.carousel-track -->
+
+    <button class="carousel-prev" id="prevBtn" aria-label="Previous slide">‹</button>
+    <button class="carousel-next" id="nextBtn" aria-label="Next slide">›</button>
+
+    <div class="carousel-dots" id="carouselDots">
+      <button class="dot active" aria-label="Go to slide 1"></button>
+      <button class="dot" aria-label="Go to slide 2"></button>
+      <button class="dot" aria-label="Go to slide 3"></button>
+      <button class="dot" aria-label="Go to slide 4"></button>
+    </div>
+  </div><!-- /.carousel -->
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">2,400+</div><div class="stat-label">Happy Customers</div></div>
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Products</div></div>
+    <div class="stat"><div class="stat-num">30 min</div><div class="stat-label">Avg Delivery</div></div>
+    <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">App Rating</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Cuisine Types</div></div>
+  </div>
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="section-header">
+      <h2>How It <em>Works</em></h2>
+      <p>Get authentic African groceries on your table in three simple steps.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Download the App</h3><p>Free on iOS and Android. Set your Cleveland delivery address in seconds.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Browse &amp; Shop</h3><p>Explore 500+ products across West African, Somali, Mexican and more.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Delivered Fresh</h3><p>Your order is picked, packed, and at your door in under 30 minutes.</p></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Categories -->
+  <section class="section tinted">
+    <div class="section-header">
+      <h2>Shop by <em>Cuisine</em></h2>
+      <p>Products from across Africa and beyond — something for every kitchen in Cleveland.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="cat-grid">
+      <a href="category-west-african.html" class="cat-tile"><span class="ct-emoji">🌍</span><h3>West African</h3><p class="ct-sub">Nigerian · Ghanaian · Ivorian · Cameroonian</p><span class="ct-count">120+ products</span></a>
+      <a href="category-somali.html" class="cat-tile"><span class="ct-emoji">🇸🇴</span><h3>Somali &amp; East African</h3><p class="ct-sub">Somali · Ethiopian · Eritrean</p><span class="ct-count">60+ products</span></a>
+      <a href="category-mexican.html" class="cat-tile"><span class="ct-emoji">🌮</span><h3>Mexican &amp; Latino</h3><p class="ct-sub">Mexican · Puerto Rican · Caribbean Latino</p><span class="ct-count">80+ products</span></a>
+      <a href="category-caribbean.html" class="cat-tile"><span class="ct-emoji">🏝️</span><h3>Caribbean</h3><p class="ct-sub">Jamaican · Trinidadian · Haitian</p><span class="ct-count">50+ products</span></a>
+      <a href="category-central-african.html" class="cat-tile"><span class="ct-emoji">🫙</span><h3>Central &amp; Southern African</h3><p class="ct-sub">Zambian · Zimbabwean · Kenyan</p><span class="ct-count">40+ products</span></a>
+      <a href="category-spices.html" class="cat-tile"><span class="ct-emoji">🌶️</span><h3>Spices &amp; Pantry</h3><p class="ct-sub">Blends · Oils · Grains · Dried goods</p><span class="ct-count">200+ products</span></a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Why <em>Cleveland African Mart?</em></h2>
+      <p>Built by the African community, for the community — and for everyone who loves these flavours.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🌍</div><h3>100% Authentic</h3><p>Sourced directly from verified African and international suppliers. No substitutes, no compromises.</p></div>
+      <div class="feature-card"><div class="feature-icon">⚡</div><h3>30-Min Delivery</h3><p>Same-day delivery across greater Cleveland. Order now, cook tonight.</p></div>
+      <div class="feature-card"><div class="feature-icon">💰</div><h3>Best Prices</h3><p>Direct sourcing means better prices. First delivery always free — no hidden fees.</p></div>
+      <div class="feature-card"><div class="feature-icon">🤝</div><h3>Community-First</h3><p>A portion of every CFM order supports local African cultural programs in Cleveland.</p></div>
+      <div class="feature-card"><div class="feature-icon">📱</div><h3>Effortless App</h3><p>Order in 2 minutes, track delivery in real time, reorder favourites in one tap.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Secure Checkout</h3><p>Card, Apple Pay, Google Pay — always encrypted and protected.</p></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section tinted">
+    <div class="section-header">
+      <h2>What Cleveland <em>Families</em> Say</h2>
+      <p>Real reviews from African, Somali, and Latino families across Cleveland.</p>
+      <div class="underline"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Finally I can get proper ofe akwu ingredients without driving hours away. The egusi, stockfish, and uziza leaves arrived so fresh. CFM is a blessing for our family."</blockquote>
+        <div class="testi-author"><div class="testi-avatar">C</div><div><div class="testi-name">Chioma E.</div><div class="testi-loc">Shaker Heights, OH</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"As a Somali family in Cleveland, we struggled to find halal suugo and suqaar spices. CFM carries everything. Fast delivery and great quality. Download this app!"</blockquote>
+        <div class="testi-author"><div class="testi-avatar">H</div><div><div class="testi-name">Hodan M.</div><div class="testi-loc">Cleveland, OH</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Me encanta esta app. Encontré masa harina, chiles secos y achiote — todo en un solo pedido. Entrega rapidísima. ¡Muy recomendado para la comunidad latina!"</blockquote>
+        <div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">María R.</div><div class="testi-loc">Parma, OH</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA -->
+  <section class="cta-section" id="download">
+    <h2>Start Shopping Authentic Today</h2>
+    <p>Download the app and get your first delivery free. No promo code needed.</p>
+    <div class="app-buttons center">
+      <a href="#" class="app-btn ios"><span class="si">🍎</span><span class="sl"><small>Download on the</small>App Store</span></a>
+      <a href="#" class="app-btn android"><span class="si">▶</span><span class="sl"><small>Get it on</small>Google Play</span></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-row"><img src="CFM-LOGO.png" alt="CFM" /><strong>Cleveland African Mart</strong></div>
+        <p>Bringing authentic African, Somali, and international groceries to Cleveland families since 2022.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/clevelandafricanmart" target="_blank">📘</a>
+          <a href="#">📸</a><a href="#">🎵</a><a href="#">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="category-west-african.html">West African</a></li>
+          <li><a href="category-somali.html">Somali &amp; East African</a></li>
+          <li><a href="category-mexican.html">Mexican &amp; Latino</a></li>
+          <li><a href="category-caribbean.html">Caribbean</a></li>
+          <li><a href="category-spices.html">Spices &amp; Pantry</a></li>
+          <li><a href="category-produce.html">Fresh Produce</a></li>
+          <li><a href="category-beverages.html">Beverages</a></li>
+          <li><a href="category-snacks.html">Snacks</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog &amp; Recipes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Centre / FAQ</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Returns &amp; Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <br /><h4>Get the App</h4>
+        <div class="footer-app">
+          <a href="#" class="footer-app-btn"><span class="fi">🍎</span><span><small>Download on the</small>App Store</span></a>
+          <a href="#" class="footer-app-btn"><span class="fi">▶</span><span><small>Get it on</small>Google Play</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cleveland African Mart LLC · Cleveland, Ohio · All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Dropdown (click-based, no gap issue) ──────────────────────────
+    document.querySelectorAll('.dropdown').forEach(function(dd) {
+      var trigger = dd.querySelector('.dropdown-trigger');
+      if (!trigger) return;
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = dd.classList.contains('open');
+        document.querySelectorAll('.dropdown.open').forEach(function(o) { o.classList.remove('open'); o.querySelector('.dropdown-trigger').setAttribute('aria-expanded','false'); });
+        if (!isOpen) { dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+      });
+    });
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.dropdown.open').forEach(function(dd) { dd.classList.remove('open'); dd.querySelector('.dropdown-trigger').setAttribute('aria-expanded','false'); });
+    });
+    document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.addEventListener('click', function(e) { e.stopPropagation(); }); });
+
+    // ── Mobile nav ────────────────────────────────────────────────────
+    var mobileBtn = document.getElementById('mobileMenuBtn');
+    var mobileNav = document.getElementById('mobileNav');
+    mobileBtn.addEventListener('click', function() {
+      var open = mobileNav.classList.toggle('open');
+      mobileBtn.classList.toggle('open', open);
+      mobileBtn.setAttribute('aria-expanded', open);
+    });
+    mobileNav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() { mobileNav.classList.remove('open'); mobileBtn.classList.remove('open'); });
+    });
+
+    // ── Carousel ──────────────────────────────────────────────────────
+    var track    = document.getElementById('carouselTrack');
+    var dots     = document.querySelectorAll('.dot');
+    var total    = 4;
+    var current  = 0;
+    var autoplay;
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+    }
+
+    function startAutoplay() {
+      autoplay = setInterval(function() { goTo(current + 1); }, 5000);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplay);
+      startAutoplay();
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', function() { goTo(current - 1); resetAutoplay(); });
+    document.getElementById('nextBtn').addEventListener('click', function() { goTo(current + 1); resetAutoplay(); });
+    dots.forEach(function(d, i) {
+      d.addEventListener('click', function() { goTo(i); resetAutoplay(); });
+    });
+
+    // Touch / swipe
+    var startX = 0;
+    track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { goTo(diff > 0 ? current + 1 : current - 1); resetAutoplay(); }
+    });
+
+    // Pause on hover
+    var carousel = document.getElementById('carousel');
+    carousel.addEventListener('mouseenter', function() { clearInterval(autoplay); });
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    startAutoplay();
+  </script>
+
+</body>
+</html>
