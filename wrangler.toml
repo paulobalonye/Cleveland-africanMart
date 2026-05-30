@@ -1,0 +1,12 @@
+name = "cleveland-african-mart"
+pages_build_output_dir = "."
+main = "index.html"
+
+[build]
+command = ""
+watch_paths = []
+
+[env.production]
+name = "cleveland-african-mart"
+route = "https://clevelandafricanmart.com/*"
+zone_id = ""

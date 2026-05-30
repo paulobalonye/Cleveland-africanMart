@@ -1,0 +1,20 @@
+{
+  "name": "cleveland-african-mart",
+  "version": "1.0.0",
+  "description": "Cleveland African Mart - Landing page and e-commerce site",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler pages deploy",
+    "dev": "wrangler pages dev"
+  },
+  "keywords": [
+    "african-foods",
+    "ecommerce",
+    "landing-page"
+  ],
+  "author": "Paul Obalonye",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
